@@ -1,0 +1,169 @@
+.banner {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerContent {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.leftSide {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c0e4e8; /* Um tom suave de azul */
+}
+
+.leftLines {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    135deg,
+    transparent 45%,
+    #76c7c0 45%,
+    #76c7c0 55%,
+    transparent 0
+  );
+  background-size: 5px 5px;
+}
+
+.leftLines h1,
+.leftLines h2 {
+  font-size: 8.125rem;
+  position: relative;
+  width: fit-content;
+
+  color: #133558;
+  line-height: 0.9;
+  font-weight: bold;
+  z-index: 1;
+  overflow: hidden; /* Garante que o highlight fique contido dentro do texto */
+}
+
+.leftLines h1::before {
+  content: "";
+  position: absolute;
+
+  top: 60%;
+  left: -3%;
+  height: 80%;
+  width: 0; /* Inicialmente invisível */
+  background-image: url("/highlight.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%; /* Mantém a altura fixa, ajusta a largura automaticamente */
+  transform: translateY(-50%);
+  z-index: -1;
+  animation: revealHighlight 2s ease forwards;
+}
+
+@keyframes revealHighlight {
+  to {
+    width: 100%; /* Aumenta a largura progressivamente */
+  }
+}
+
+.rightside {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  background-color: #c0e4e8;
+  animation: changeBackground 15s infinite;
+
+  @keyframes changeBackground {
+    0% {
+      background-image: url("/bg1.jpg");
+    }
+    33% {
+      background-image: url("/bg2.jpg");
+    }
+    66% {
+      background-image: url("/bg3.jpg");
+    }
+    100% {
+      background-image: url("/bg1.jpg");
+    }
+  }
+}
+
+.rightBox {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem;
+  max-width: 18vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  img {
+    position: absolute;
+    top: 12%;
+    right: 8%;
+  }
+  h2 {
+    color: #133558;
+  }
+  p {
+    color: #133558;
+  }
+}
+.description {
+  margin-top: 10%;
+  width: fit-content;
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    color: #133558;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 10%;
+    .arrow {
+      width: 50px;
+    }
+  }
+  p {
+    font-size: 1.25rem;
+    color: #133558;
+    overflow: hidden;
+    display: inline-block;
+    white-space: normal;
+
+    span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: revealText 0.5s ease forwards;
+    }
+  }
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  width: fit-content;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+}
