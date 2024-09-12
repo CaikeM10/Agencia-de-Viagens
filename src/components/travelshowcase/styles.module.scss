@@ -3,6 +3,7 @@
   min-height: 100vh;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
     url("/hotel.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
 }
 
 .content {
@@ -16,7 +17,7 @@
 }
 
 .title {
-  width: 52%;
+  width: 77%;
   h1 {
     color: #fff;
     font-size: 3rem;

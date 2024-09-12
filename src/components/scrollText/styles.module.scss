@@ -1,77 +1,57 @@
 $animationSpeed: 120s;
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-550px * 20));
-  } // Adjust the number based on how many slides you have
-}
-
 .slider {
-  background: white;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-  height: 100px;
-  margin: auto;
-  text-wrap: nowrap;
   overflow: hidden;
-  position: relative;
-  width: 100%;
-
-  &::before,
-  &::after {
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: 200px;
-    z-index: 2;
-  }
-
-  &::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-  }
-
-  &::before {
-    left: 0;
-    top: 0;
-  }
+  white-space: nowrap;
+  background-color: #133558;
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
 
 .slideTrack {
-  animation: scroll $animationSpeed linear infinite;
-  gap: 4rem;
   display: flex;
-  width: calc(550px * 20); // Adjust based on the number of slides
+  animation: scroll $animationSpeed linear infinite;
 }
 
 .slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  width: 100%;
+  width: 550px; /* Ajuste o tamanho de acordo com o necessário */
 }
 
 .textContainer {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .companyName {
-  color: #133558;
-
-  font-weight: bold;
-  font-size: 7rem;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 10px;
 }
 
 .slogan {
-  color: white;
+  color: #ff8c00;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
 
-  padding: 5px;
-  font-size: 7rem;
-  margin-top: 5px;
-  text-shadow: -0.5px -0.5px 0 #133558, 0.5px -0.5px 0 #133558,
-    -0.5px 0.5px 0 #133558, 0.5px 0.5px 0 #133558;
+.icon {
+  width: 40px;
+  height: auto;
+  margin: 0 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-550px * 20));
+  }
 }

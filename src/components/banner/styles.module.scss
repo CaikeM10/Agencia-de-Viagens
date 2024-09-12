@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #c0e4e8; /* Um tom suave de azul */
+  background-color: #1f3a5f; /* Um tom de azul marinho escuro */
 }
 
 .leftLines {
@@ -31,8 +31,8 @@
   background-image: linear-gradient(
     135deg,
     transparent 45%,
-    #76c7c0 45%,
-    #76c7c0 55%,
+    #284e78 45%,
+    /* Um tom de azul mais escuro */ #284e78 55%,
     transparent 0
   );
   background-size: 5px 5px;
@@ -44,11 +44,11 @@
   position: relative;
   width: fit-content;
 
-  color: #133558;
+  color: #f0f4f8; /* Um tom de branco suave para contraste */
   line-height: 0.9;
   font-weight: bold;
   z-index: 1;
-  overflow: hidden; /* Garante que o highlight fique contido dentro do texto */
+  overflow: hidden;
 }
 
 .leftLines h1::before {
@@ -58,10 +58,10 @@
   top: 60%;
   left: -3%;
   height: 80%;
-  width: 0; /* Inicialmente invisível */
+  width: 0;
   background-image: url("/highlight.png");
   background-repeat: no-repeat;
-  background-size: auto 100%; /* Mantém a altura fixa, ajusta a largura automaticamente */
+  background-size: auto 100%;
   transform: translateY(-50%);
   z-index: -1;
   animation: revealHighlight 2s ease forwards;
@@ -69,7 +69,7 @@
 
 @keyframes revealHighlight {
   to {
-    width: 100%; /* Aumenta a largura progressivamente */
+    width: 100%;
   }
 }
 
@@ -80,7 +80,7 @@
   align-items: flex-end;
   background-size: cover;
   background-position: center;
-  background-color: #c0e4e8;
+  background-color: #1f3a5f; /* Usando o mesmo azul marinho para consistência */
   animation: changeBackground 15s infinite;
 
   @keyframes changeBackground {
@@ -114,12 +114,13 @@
     right: 8%;
   }
   h2 {
-    color: #133558;
+    color: #1f3a5f; /* Cor branca suave */
   }
   p {
-    color: #133558;
+    color: #1f3a5f;
   }
 }
+
 .description {
   margin-top: 10%;
   width: fit-content;
@@ -131,7 +132,7 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    color: #133558;
+    color: #f0f4f8;
     font-size: 1.25rem;
     font-weight: bold;
     margin-top: 10%;
@@ -141,7 +142,7 @@
   }
   p {
     font-size: 1.25rem;
-    color: #133558;
+    color: #f0f4f8;
     overflow: hidden;
     display: inline-block;
     white-space: normal;

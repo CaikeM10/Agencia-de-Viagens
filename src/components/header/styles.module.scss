@@ -23,25 +23,48 @@
   gap: 20px;
   img {
     width: 100px;
+    filter: brightness(0) invert(1);
   }
   p {
-    color: #2d2c2b;
+    color: #fff;
     font-weight: 600;
     font-size: 19px;
+    cursor: pointer;
   }
 }
 
 .rightside {
   button {
+    color: #fff;
+    font-weight: 500;
+    font-size: 19px;
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px 24px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease,
+      transform 0.3s ease;
+
     .icon {
       color: #fff;
-      width: 20px;
+      width: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
+      border: 1px solid #fff; /* Borda mais visível */
+      color: #fff; /* Muda a cor do texto para um tom dourado */
+      transform: scale(1.05); /* Aumenta levemente o tamanho */
+
+      .icon {
+        transform: rotate(
+          20deg
+        ); /* Pequena rotação no ícone ao passar o mouse */
+      }
     }
   }
 }

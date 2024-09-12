@@ -1,10 +1,8 @@
-import Header from "../header";
 import styles from "./styles.module.scss";
 
 export default function Banner() {
   return (
     <div className={styles.banner}>
-      <Header />
       <div className={styles.bannerContent}>
         <div className={styles.leftSide}>
           <div className={styles.leftLines}>

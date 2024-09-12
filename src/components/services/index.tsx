@@ -66,7 +66,6 @@ export default function Services() {
             }}
           >
             <div className={styles.overlay}>
-              {" "}
               <img src="/arrowWhite.svg" alt="" />
               <h4>Passagens Aéreas</h4>
               <p>
@@ -84,7 +83,6 @@ export default function Services() {
             }}
           >
             <div className={styles.overlay}>
-              {" "}
               <img src="/arrowWhite.svg" alt="" />
               <h4>Orçamento de Hospedagens</h4>
               <p>

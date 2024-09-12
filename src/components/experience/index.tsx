@@ -105,7 +105,7 @@ export default function Experience() {
         <div className={styles.topContent}>
           <div className={styles.leftside}>
             <h2 ref={textRef}>
-              {"Somos uma empresa séria com muita competência e anos de experiência"
+              {"Somos uma empresa com o compromisso de transformar suas viagens em experiências incríveis"
                 .split("")
                 .map((char, index) => (
                   <span
@@ -123,34 +123,34 @@ export default function Experience() {
           <div className={styles.rightside}>
             <div className={styles.ball} ref={ballRef}>
               <div className={styles.text}>
-                <h3>20</h3>
+                <h3>120</h3>
                 <span>+</span>
               </div>
             </div>
             <div className={styles.experienceText}>
-              <span>20 + anos de experiência</span>
-              <p>Estamos a mais de 20 anos entregando as melhores viagens</p>
+              <span>120+ destinos disponíveis</span>
+              <p>Levamos você para mais de 120 destinos ao redor do mundo</p>
             </div>
           </div>
         </div>
         <div className={styles.bottomcontent}>
           <div className={styles.infoCard}>
             <p>
-              <strong>350+</strong> very satisfied clients around the worldwide.
+              <strong>350+</strong> clientes satisfeitos em todo o mundo.
             </p>
-            <img src="/happy.svg" alt="Happy Clients" />
+            <img src="/happy.svg" alt="Clientes felizes" />
           </div>
           <div className={styles.infoCard}>
             <p>
-              <strong>350+</strong> very satisfied clients around the worldwide.
+              <strong>25+</strong> destinos exóticos.
             </p>
-            <img src="/happy.svg" alt="Happy Clients" />
+            <img src="/palm.svg" alt="Destinos exóticos" />
           </div>
           <div className={styles.infoCard}>
             <p>
-              <strong>350+</strong> very satisfied clients around the worldwide.
+              <strong>50+</strong> pacotes personalizados.
             </p>
-            <img src="/happy.svg" alt="Happy Clients" />
+            <img src="/pkg.svg" alt="Pacotes personalizados" />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function Steps() {
         if (row) {
           gsap.fromTo(
             row,
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 50 }, // Começa invisível e deslocado
             {
               opacity: 1,
               y: 0,
@@ -24,9 +24,16 @@ export default function Steps() {
               scrollTrigger: {
                 trigger: row,
                 start: "top 85%",
-                end: "top 50%",
-                toggleActions: "play none none reverse",
-                once: true,
+                end: "bottom top", // Termina quando a parte inferior do elemento atinge o topo
+                toggleActions: "play reverse play reverse",
+                onLeave: () => {
+                  gsap.to(row, {
+                    opacity: 0,
+                    y: 50, // Desliza para baixo ao sumir
+                    duration: 1,
+                    ease: "power3.out",
+                  });
+                },
               },
             }
           );
@@ -42,8 +49,8 @@ export default function Steps() {
       <div className={styles.content}>
         <div className={styles.title}>
           <h3>
-            É tão desafiador encontrar uma boa equipe para fazer grandes coisas.
-            Mas podemos fornecer a você a melhor.
+            Viajar pode ser mais fácil do que você imagina. Deixe-nos cuidar de
+            todos os detalhes.
           </h3>
         </div>
         <div className={styles.rows}>
@@ -57,13 +64,13 @@ export default function Steps() {
               <p>01</p>
               <div className={styles.rowTitle}>
                 <img src="/users.svg" alt="" />
-                <h3>Ambiente</h3>
+                <h3>Destino dos Sonhos</h3>
               </div>
             </div>
             <div className={styles.rightside}>
               <p>
-                Venha conhecer o nosso ambiente de trabalho e veja como é
-                trabalhar conosco.
+                Conheça os destinos mais incríveis ao redor do mundo com pacotes
+                personalizados.
               </p>
             </div>
           </div>
@@ -79,13 +86,13 @@ export default function Steps() {
               <p>02</p>
               <div className={styles.rowTitle}>
                 <img src="/users.svg" alt="" />
-                <h3>Ambiente</h3>
+                <h3>Facilidade de Pagamento</h3>
               </div>
             </div>
             <div className={styles.rightside}>
               <p>
-                Venha conhecer o nosso ambiente de trabalho e veja como é
-                trabalhar conosco.
+                Oferecemos condições especiais para parcelamento, tornando sua
+                viagem ainda mais acessível.
               </p>
             </div>
           </div>
@@ -101,13 +108,13 @@ export default function Steps() {
               <p>03</p>
               <div className={styles.rowTitle}>
                 <img src="/users.svg" alt="" />
-                <h3>Ambiente</h3>
+                <h3>Experiências Únicas</h3>
               </div>
             </div>
             <div className={styles.rightside}>
               <p>
-                Venha conhecer o nosso ambiente de trabalho e veja como é
-                trabalhar conosco.
+                Tenha experiências inesquecíveis em cada viagem, com roteiros
+                pensados especialmente para você.
               </p>
             </div>
           </div>
@@ -123,13 +130,13 @@ export default function Steps() {
               <p>04</p>
               <div className={styles.rowTitle}>
                 <img src="/users.svg" alt="" />
-                <h3>Ambiente</h3>
+                <h3>Suporte 24/7</h3>
               </div>
             </div>
             <div className={styles.rightside}>
               <p>
-                Venha conhecer o nosso ambiente de trabalho e veja como é
-                trabalhar conosco.
+                Nossa equipe está disponível a qualquer momento para garantir
+                que sua viagem seja perfeita.
               </p>
             </div>
           </div>

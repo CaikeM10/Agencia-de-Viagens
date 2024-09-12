@@ -35,19 +35,27 @@
   border-top: 1px solid #fff;
   padding-top: 2rem;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   gap: 2rem;
+  align-items: center;
+  width: 100%;
 
   img {
     width: 40px;
   }
 
-  justify-content: space-between;
+  .leftside,
+  .rightside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 50%; /* Distribui igualmente os lados */
+  }
 
   .leftside {
-    width: 70%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
 
     h3 {
@@ -64,12 +72,17 @@
   .rowTitle {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1rem;
   }
 
-  .rightside p {
-    color: #fff;
-    font-size: 1.5rem;
+  .rightside {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    p {
+      color: #fff;
+      font-size: 1.5rem;
+    }
   }
 }
