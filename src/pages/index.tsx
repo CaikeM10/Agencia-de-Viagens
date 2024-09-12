@@ -6,6 +6,7 @@ import Banner from "@/components/banner";
 import Experience from "@/components/experience";
 import Services from "@/components/services";
 import Steps from "@/components/steps";
+import ScrollText from "@/components/scrollText";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Experience />
       <Steps />
       <Services />
+      <ScrollText />
     </>
   );
 }
