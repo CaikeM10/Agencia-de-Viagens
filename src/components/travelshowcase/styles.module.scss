@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    url("/hotel.jpg") no-repeat center center/cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: 8vw;
+  justify-content: center;
+  gap: 4vw;
+}
+
+.title {
+  width: 52%;
+  h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  img {
+    filter: brightness(0) invert(1);
+    width: 200px;
+  }
+  hr {
+    width: 200px;
+    height: 1px;
+    background-color: #a7a7a7;
+    border: none;
+  }
+  p {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+}
