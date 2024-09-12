@@ -5,7 +5,7 @@ export default function Header() {
     <header className={styles.container}>
       <div className={styles.content}>
         <div className={styles.leftside}>
-          <img src="/logo.png" />
+          <img src="/logoCrop.png" />
           <p>Home</p>
           <p>Agency</p>
           <p>Expertise</p>

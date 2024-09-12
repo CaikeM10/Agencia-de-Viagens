@@ -1,5 +1,6 @@
 import Banner from "@/components/banner";
 import Experience from "@/components/experience";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Services from "@/components/services";
 import Steps from "@/components/steps";
@@ -15,6 +16,7 @@ export default function Home() {
       <Experience />
       <Steps />
       <Services />
+      <Footer />
     </>
   );
 }
