@@ -8,12 +8,14 @@
   width: 100%;
   padding-inline: 8vw;
   padding-top: 60px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .top {
   display: flex;
   justify-content: space-between;
-  min-height: 45vh;
+  min-height: 350px;
   padding-bottom: 50px;
 }
 
