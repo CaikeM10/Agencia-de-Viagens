@@ -1,0 +1,156 @@
+.container {
+  background: #fff;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-inline: 8vw;
+  padding-top: 60px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  min-height: 350px;
+  padding-bottom: 50px;
+}
+
+.leftside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 40px;
+  img {
+    width: 150px;
+  }
+  p {
+    color: #2d2c2b;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.letters {
+  display: flex;
+  gap: 20px;
+  p {
+    color: #2d2c2b;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box,
+.box2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  h5 {
+    color: #2d2c2b;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  h4 {
+    color: #2d2c2b;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  p {
+    color: #767574;
+    font-weight: 600;
+    font-size: 17px;
+  }
+}
+
+.box2 {
+  h4 {
+    text-decoration: underline;
+  }
+}
+
+.rightside {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    color: #2d2c2b;
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 8px;
+
+    input {
+      border: none;
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+      background: transparent;
+    }
+
+    img {
+      width: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  .privacy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #767574;
+    padding-top: 15px;
+
+    img {
+      width: 20px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.bottom {
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+
+.leftBottom {
+  p {
+    color: #767574;
+    font-weight: 600;
+    font-size: 18px;
+    span {
+      color: #2d2c2b;
+      text-decoration: underline;
+    }
+  }
+}
+
+.rightBottom {
+  display: flex;
+  gap: 30px;
+  p {
+    color: #767574;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,47 @@
+.container {
+  background: transparent;
+  position: absolute; /* Adiciona o Header sobre o Banner */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Garante que ele fique acima do Banner */
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-inline: 8vw;
+  align-items: center;
+
+  width: 100%;
+}
+
+.leftside {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  img {
+    width: 100px;
+  }
+  p {
+    color: #2d2c2b;
+    font-weight: 600;
+    font-size: 19px;
+  }
+}
+
+.rightside {
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    .icon {
+      color: #fff;
+      width: 20px;
+    }
+  }
+}
