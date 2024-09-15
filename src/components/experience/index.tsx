@@ -1,9 +1,58 @@
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 
-export default function Experience() {
+interface ExperienceProps {
+  language: "pt" | "en" | "fr" | "es"; // Adiciona a prop de idioma
+}
+
+export default function Experience({ language }: ExperienceProps) {
   const ballRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
+
+  const translations = {
+    pt: {
+      header:
+        "Somos uma empresa com o compromisso de transformar suas viagens em experiências incríveis",
+      experienceText: "120+ destinos disponíveis",
+      experienceDescription:
+        "Levamos você para mais de 120 destinos ao redor do mundo",
+      infoCard1: "clientes satisfeitos em todo o mundo.",
+      infoCard2: "destinos exóticos.",
+      infoCard3: "pacotes personalizados.",
+    },
+    en: {
+      header:
+        "We are a company committed to transforming your travels into incredible experiences",
+      experienceText: "120+ available destinations",
+      experienceDescription:
+        "We take you to over 120 destinations around the world",
+      infoCard1: "satisfied customers worldwide.",
+      infoCard2: "exotic destinations.",
+      infoCard3: "customized packages.",
+    },
+    fr: {
+      header:
+        "Nous sommes une entreprise engagée à transformer vos voyages en expériences incroyables",
+      experienceText: "120+ destinations disponibles",
+      experienceDescription:
+        "Nous vous emmenons vers plus de 120 destinations dans le monde",
+      infoCard1: "clients satisfaits dans le monde entier.",
+      infoCard2: "destinations exotiques.",
+      infoCard3: "forfaits personnalisés.",
+    },
+    es: {
+      header:
+        "Somos una empresa comprometida a transformar tus viajes en experiencias increíbles",
+      experienceText: "120+ destinos disponibles",
+      experienceDescription:
+        "Te llevamos a más de 120 destinos alrededor del mundo",
+      infoCard1: "clientes satisfechos en todo el mundo.",
+      infoCard2: "destinos exóticos.",
+      infoCard3: "paquetes personalizados.",
+    },
+  };
+
+  const text = translations[language]; // Escolhe o idioma com base na prop
 
   useEffect(() => {
     // Load GSAP and ScrollTrigger
@@ -105,19 +154,17 @@ export default function Experience() {
         <div className={styles.topContent}>
           <div className={styles.leftside}>
             <h2 ref={textRef}>
-              {"Somos uma empresa com o compromisso de transformar suas viagens em experiências incríveis"
-                .split("")
-                .map((char, index) => (
-                  <span
-                    key={index}
-                    style={{
-                      display: char === " " ? "inline-block" : "inline",
-                      width: char === " " ? "0.25em" : "auto",
-                    }}
-                  >
-                    {char}
-                  </span>
-                ))}
+              {text.header.split("").map((char, index) => (
+                <span
+                  key={index}
+                  style={{
+                    display: char === " " ? "inline-block" : "inline",
+                    width: char === " " ? "0.25em" : "auto",
+                  }}
+                >
+                  {char}
+                </span>
+              ))}
             </h2>
           </div>
           <div className={styles.rightside}>
@@ -128,27 +175,27 @@ export default function Experience() {
               </div>
             </div>
             <div className={styles.experienceText}>
-              <span>120+ destinos disponíveis</span>
-              <p>Levamos você para mais de 120 destinos ao redor do mundo</p>
+              <span>{text.experienceText}</span>
+              <p>{text.experienceDescription}</p>
             </div>
           </div>
         </div>
         <div className={styles.bottomcontent}>
           <div className={styles.infoCard}>
             <p>
-              <strong>350+</strong> clientes satisfeitos em todo o mundo.
+              <strong>350+</strong> {text.infoCard1}
             </p>
             <img src="/happy.svg" alt="Clientes felizes" />
           </div>
           <div className={styles.infoCard}>
             <p>
-              <strong>25+</strong> destinos exóticos.
+              <strong>25+</strong> {text.infoCard2}
             </p>
             <img src="/palm.svg" alt="Destinos exóticos" />
           </div>
           <div className={styles.infoCard}>
             <p>
-              <strong>50+</strong> pacotes personalizados.
+              <strong>50+</strong> {text.infoCard3}
             </p>
             <img src="/pkg.svg" alt="Pacotes personalizados" />
           </div>

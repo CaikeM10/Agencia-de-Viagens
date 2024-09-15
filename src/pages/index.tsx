@@ -8,9 +8,11 @@ import ScrollText from "@/components/scrollText";
 import Steps from "@/components/steps";
 import TravelShowcase from "@/components/travelshowcase";
 import { Inter } from "next/font/google";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
+
+type Language = "pt" | "en" | "fr" | "es";
 
 export default function Home() {
   const experienceRef = useRef(null);
@@ -19,31 +21,35 @@ export default function Home() {
   const travelShowcaseRef = useRef(null);
   const contactRef = useRef(null);
 
+  const [language, setLanguage] = useState<Language>("pt");
+
   return (
     <>
       <ScrollProgressBar />
-      <Banner />
+      <Banner language={language} />
       <Header
         experienceRef={experienceRef}
         stepsRef={stepsRef}
         productsRef={productsRef}
         travelShowcaseRef={travelShowcaseRef}
         contactRef={contactRef}
+        language={language}
+        setLanguage={setLanguage}
       />
       <div ref={experienceRef}>
-        <Experience />
+        <Experience language={language} />
       </div>
       <div ref={stepsRef}>
-        <Steps />
+        <Steps language={language} />
       </div>
       <div ref={productsRef}>
-        <CaseStudies />
+        <CaseStudies language={language} />
       </div>
       <div ref={travelShowcaseRef}>
-        <TravelShowcase />
+        <TravelShowcase language={language} />
       </div>
       <div ref={contactRef}>
-        <ScrollText />
+        <ScrollText language={language} />
       </div>
       <Footer />
     </>
