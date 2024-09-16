@@ -1,7 +1,68 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-export default function Footer() {
+interface FooterProps {
+  language: "pt" | "en" | "fr" | "es"; // Adiciona a prop de idioma
+}
+
+const translations = {
+  pt: {
+    serviceQuestions: "DÚVIDAS SOBRE SERVIÇOS",
+    onlineService: "Atendimento 100% online",
+    customerSupport: "SUPORTE AO CLIENTE",
+    availableInBrazil: "Disponível em todo o Brasil",
+    remoteService: "Atendimento remoto",
+    subscribeTitle: "INSCREVA-SE PARA RECEBER NOVIDADES",
+    privacy: "Garantimos a proteção da sua privacidade",
+    footerText: "© 2024 Easy Visa desenvolvido por SolidTech",
+    privacyPolicy: "Política de Privacidade",
+    termsConditions: "Termos e Condições",
+    copyrights: "Direitos Autorais",
+  },
+  en: {
+    serviceQuestions: "QUESTIONS ABOUT SERVICES",
+    onlineService: "100% online service",
+    customerSupport: "CUSTOMER SUPPORT",
+    availableInBrazil: "Available throughout Brazil",
+    remoteService: "Remote service",
+    subscribeTitle: "SUBSCRIBE TO RECEIVE UPDATES",
+    privacy: "We guarantee the protection of your privacy",
+    footerText: "© 2024 Easy Visa developed by SolidTech",
+    privacyPolicy: "Privacy Policy",
+    termsConditions: "Terms and Conditions",
+    copyrights: "Copyright",
+  },
+  fr: {
+    serviceQuestions: "QUESTIONS SUR LES SERVICES",
+    onlineService: "Service 100% en ligne",
+    customerSupport: "SERVICE CLIENT",
+    availableInBrazil: "Disponible dans tout le Brésil",
+    remoteService: "Service à distance",
+    subscribeTitle: "INSCRIVEZ-VOUS POUR RECEVOIR LES NOUVELLES",
+    privacy: "Nous garantissons la protection de votre vie privée",
+    footerText: "© 2024 Easy Visa développé par SolidTech",
+    privacyPolicy: "Politique de Confidentialité",
+    termsConditions: "Termes et Conditions",
+    copyrights: "Droits d'Auteur",
+  },
+  es: {
+    serviceQuestions: "PREGUNTAS SOBRE SERVICIOS",
+    onlineService: "Atención 100% online",
+    customerSupport: "SOPORTE AL CLIENTE",
+    availableInBrazil: "Disponible en todo Brasil",
+    remoteService: "Atención remota",
+    subscribeTitle: "SUSCRÍBETE PARA RECIBIR NOVEDADES",
+    privacy: "Garantizamos la protección de tu privacidad",
+    footerText: "© 2024 Easy Visa desarrollado por SolidTech",
+    privacyPolicy: "Política de Privacidad",
+    termsConditions: "Términos y Condiciones",
+    copyrights: "Derechos de Autor",
+  },
+};
+
+export default function Footer({ language }: FooterProps) {
+  const text = translations[language]; // Seleciona o idioma com base na prop
+
   return (
     <footer className={styles.container}>
       <div className={styles.content}>
@@ -20,27 +81,28 @@ export default function Footer() {
 
           <div className={styles.middle}>
             <div className={styles.box2}>
-              <h5>DÚVIDAS SOBRE SERVIÇOS</h5>
-              <p>Atendimento 100% online</p>
+              <h5>{text.serviceQuestions}</h5>
+              <p>{text.onlineService}</p>
               <h4>contato@easyvisa.com.br</h4>
             </div>
             <div className={styles.box2}>
-              <h5>SUPORTE AO CLIENTE</h5>
-              <p>Disponível em todo o Brasil</p>
-              <p>Atendimento remoto</p>
+              <h5>{text.customerSupport}</h5>
+              <p>{text.availableInBrazil}</p>
+              <p>{text.remoteService}</p>
               <h4>suporte@easyvisa.com.br</h4>
             </div>
           </div>
+
           <div className={styles.rightside}>
             <div className={styles.rightTop}>
-              <h2>INSCREVA-SE PARA RECEBER NOVIDADES</h2>
+              <h2>{text.subscribeTitle}</h2>
               <div className={styles.inputContainer}>
                 <input type="email" placeholder="Digite seu email..." />
                 <img src="/mail.svg" alt="Ícone de email" />
               </div>
               <div className={styles.privacy}>
                 <img src="/hand.svg" alt="Ícone de privacidade" />
-                <p>Garantimos a proteção da sua privacidade</p>
+                <p>{text.privacy}</p>
               </div>
             </div>
             <div className={styles.rightBottom}>
@@ -53,17 +115,15 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
         <div className={styles.bottom}>
           <div className={styles.leftBottom}>
-            <p>
-              © 2024 Easy Visa desenvolvido por
-              <span>SolidTech</span>
-            </p>
+            <p>{text.footerText}</p>
           </div>
           <div className={styles.rightBottom}>
-            <p>Política de Privacidade</p>
-            <p>Termos e Condições</p>
-            <p>Direitos Autorais</p>
+            <p>{text.privacyPolicy}</p>
+            <p>{text.termsConditions}</p>
+            <p>{text.copyrights}</p>
           </div>
         </div>
       </div>

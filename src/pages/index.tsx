@@ -51,7 +51,7 @@ export default function Home() {
       <div ref={contactRef}>
         <ScrollText language={language} />
       </div>
-      <Footer />
+      <Footer language={language} />
     </>
   );
 }
