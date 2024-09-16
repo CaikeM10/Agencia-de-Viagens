@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 export default function Footer() {
@@ -8,48 +9,47 @@ export default function Footer() {
           <div className={styles.leftside}>
             <img src="/logoCrop.png" alt="Logo Easy Visa" />
             <div className={styles.letters}>
-              <p>Fb.</p>
-              <p>Ig.</p>
-              <p>Tw.</p>
-              <p>Be.</p>
+              <Link href="https://www.instagram.com/agenciaeasyvisa/">
+                <img src="/instagram.svg" alt="insta" />
+              </Link>
+              <Link href="https://wa.me/message/AVAYUU2HYYIOJ1">
+                <img src="/whatsapp.svg" alt="whats" />
+              </Link>
             </div>
           </div>
-          <div className={styles.middle}>
-            <div className={styles.box}>
-              <h5>SÃO PAULO</h5>
-              <h4>Easy Visa Agência de Viagens.</h4>
-              <p>Avenida Paulista, 1234,</p>
-              <p>Brasil.</p>
-            </div>
-            <div className={styles.box}>
-              <h5>RIO DE JANEIRO</h5>
-              <h4>Easy Visa Agência de Viagens.</h4>
-              <p>Rua das Laranjeiras, 567,</p>
-              <p>Brasil.</p>
-            </div>
-          </div>
+
           <div className={styles.middle}>
             <div className={styles.box2}>
               <h5>DÚVIDAS SOBRE SERVIÇOS</h5>
-              <p>Avenida Paulista, 1234,</p>
+              <p>Atendimento 100% online</p>
               <h4>contato@easyvisa.com.br</h4>
             </div>
             <div className={styles.box2}>
               <h5>SUPORTE AO CLIENTE</h5>
-              <p>Rua das Laranjeiras, 567,</p>
-              <p>Brasil</p>
+              <p>Disponível em todo o Brasil</p>
+              <p>Atendimento remoto</p>
               <h4>suporte@easyvisa.com.br</h4>
             </div>
           </div>
           <div className={styles.rightside}>
-            <h2>INSCREVA-SE PARA RECEBER NOVIDADES</h2>
-            <div className={styles.inputContainer}>
-              <input type="email" placeholder="Digite seu email..." />
-              <img src="/mail.svg" alt="Ícone de email" />
+            <div className={styles.rightTop}>
+              <h2>INSCREVA-SE PARA RECEBER NOVIDADES</h2>
+              <div className={styles.inputContainer}>
+                <input type="email" placeholder="Digite seu email..." />
+                <img src="/mail.svg" alt="Ícone de email" />
+              </div>
+              <div className={styles.privacy}>
+                <img src="/hand.svg" alt="Ícone de privacidade" />
+                <p>Garantimos a proteção da sua privacidade</p>
+              </div>
             </div>
-            <div className={styles.privacy}>
-              <img src="/hand.svg" alt="Ícone de privacidade" />
-              <p>Garantimos a proteção da sua privacidade</p>
+            <div className={styles.rightBottom}>
+              <Link href="https://www.reclameaqui.com.br/">
+                <img src="reclame.png" alt="reclame" />
+              </Link>
+              <Link href="https://cadastur.turismo.gov.br/hotsite/#!/public/capa/entrar">
+                <img src="cadastur.png" alt="cadastur" />
+              </Link>
             </div>
           </div>
         </div>

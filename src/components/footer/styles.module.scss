@@ -36,11 +36,10 @@
 
 .letters {
   display: flex;
-  gap: 20px;
-  p {
-    color: #2d2c2b;
-    font-weight: 600;
-    font-size: 18px;
+  justify-content: space-between;
+  img {
+    width: 35px;
+    cursor: pointer;
   }
 }
 
@@ -79,6 +78,12 @@
 }
 
 .rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightTop {
   display: flex;
   flex-direction: column;
   h2 {
@@ -123,6 +128,17 @@
     p {
       margin: 0;
     }
+  }
+}
+
+.rightBottom {
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 120px;
+    height: 100%;
+    filter: brightness(0) invert(0);
+    cursor: pointer;
   }
 }
 
