@@ -4,7 +4,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10; /* Garante que ele fique acima do Banner */
+  z-index: 10;/* Garante que ele fique acima do Banner */
+  display: none; /* para fazer o responsivo */
 }
 
 .content {

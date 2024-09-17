@@ -55,3 +55,65 @@ $animationSpeed: 120s;
     transform: translateX(calc(-550px * 20));
   }
 }
+
+@media screen and (max-width: 768px) {
+  $animationSpeed: 120s;
+
+  .slider {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #133558;
+    height: 60px; /* Reduz a altura do slider */
+    display: flex;
+    align-items: center;
+  }
+
+  .slideTrack {
+    display: flex;
+    animation: scroll $animationSpeed linear infinite;
+  }
+
+  .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Reduz a largura do slide para telas menores */
+  }
+
+  .textContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  .companyName {
+    color: #fff;
+    font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    font-weight: 700;
+    margin: 0 8px;
+  }
+
+  .slogan {
+    color: #ff8c00;
+    font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    font-weight: 500;
+  }
+
+  .icon {
+    width: 30px; /* Reduz o tamanho do ícone */
+    height: auto;
+    margin: 0 8px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Ajuste o valor para corresponder ao novo tamanho do slide em telas menores */
+      transform: translateX(calc(-300px * 20)); 
+    }
+  }
+}
+

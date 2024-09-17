@@ -37,7 +37,10 @@
         color: black;
         font-weight: bold;
         border-bottom: 2px solid black;
-      }
+        @media screen and (max-width: 768px) {
+          border-bottom: none
+          ;
+      }}
 
       &:hover {
         color: black;
@@ -125,3 +128,73 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .caseStudies {
+    padding-inline: 4vw;
+    padding-block: 20px; /* Diminuindo o padding geral */
+    flex-direction: column;
+
+    h2 {
+      font-size: 20px; /* Título menor */
+      margin-bottom: 15px; /* Ajusta o espaçamento inferior do título */
+    }
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column; /* Colocando os botões em uma coluna */
+    align-items: center; /* Centralizando os botões */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-bottom: 20px; /* Adiciona espaço abaixo das categorias */
+
+    button {
+      font-size: 14px; /* Fonte menor */
+      padding: 6px 12px; /* Padding ajustado nos botões */
+      width: 100%; /* Cada botão ocupa 100% da largura disponível */
+      max-width: none; /* Remove qualquer limite de largura */
+      text-align: center; /* Centraliza o texto nos botões */
+      position: relative; /* Para permitir a linha embaixo */
+
+      &.active {
+        border-bottom: none;
+      }
+
+      &.active::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza a linha */
+        width: 10%; /* Controla a largura da linha */
+        height: 2px;
+        background-color: black; /* Cor da linha */
+        display: block;
+      }
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    gap: 15px; /* Espaço entre os itens da grade */
+    align-items: center; /* Centraliza os itens da grid */
+
+    .item {
+      width: 100%; /* Itens ocupam 100% da largura do container */
+      height: auto; /* Ajusta a altura automaticamente */
+      max-width: 300px; /* Define um limite de largura para não ficar muito grande */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      img {
+        object-fit: cover; /* Mantém a proporção da imagem */
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

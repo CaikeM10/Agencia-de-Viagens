@@ -129,3 +129,88 @@
   align-items: center;
   gap: 4rem;
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding-inline: 4vw; /* Reduzindo o padding lateral */
+    padding-block: 3rem;
+    gap: 2rem; /* Reduzindo o espaço entre os elementos */
+    align-items: center; /* Garantindo que os elementos estejam centralizados */
+    text-align: center;
+  }
+
+  .topContent {
+    flex-direction: column; /* Empilhando os elementos */
+    align-items: center;
+    text-align: center;
+  }
+
+  .leftside {
+    flex-direction: column; /* Empilhar o texto e a bola verticalmente */
+    align-items: center;
+    text-align: center;
+    justify-content: center; /* Centralizar os elementos verticalmente */
+    gap: 1rem; /* Espaçamento entre o texto e a bola */
+  }
+
+  .leftside h2 {
+    font-size: 17px; /* Ajustando o tamanho da fonte */
+    max-width: 100%; /* Garantindo que o texto ocupe a largura disponível */
+  }
+
+  .ball {
+    max-width: 150px; /* Reduzindo o tamanho da bola */
+    display: flex;
+    margin-top: 2rem; /* Espaço entre o texto e a bola */
+    left: 113px;
+    h3 {
+      font-size: 42px; /* Reduzindo o tamanho da fonte da bola */
+    }
+    span {
+      font-size: 20px; /* Ajustando o tamanho do texto dentro da bola */
+    }
+    &:hover {
+      transform: scale(1.05); /* Reduzindo o efeito de hover em telas pequenas */
+    }
+  }
+
+  .experienceText {
+    font-size: 1.2rem; /* Reduzindo o tamanho da fonte para o texto de experiência */
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    margin-top: 1rem; /* Espaço entre a bola e o segundo texto */
+
+    span {
+      font-size: 16px;
+    }
+    
+    p {
+      font-size: 15px; /* Ajustando o tamanho do texto */
+    }
+  }
+
+  .rightside {
+    gap: 2rem;
+    display: block;
+  }
+
+  .infoCard {
+    flex-direction: column; /* Empilhando os elementos verticalmente */
+    gap: 1rem;
+    width: 140%;
+    img {
+      width: 25px; /* Ajustando o tamanho das imagens */
+    }
+    p {
+      font-size: 14px /* Ajustando o tamanho do texto */
+    }
+  }
+
+  .bottomcontent {
+    flex-direction: column; /* Empilhando os elementos */
+    gap: 2rem; /* Reduzindo o espaço entre os elementos */
+  }
+}
+
+

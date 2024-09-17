@@ -86,3 +86,70 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding-inline: 4vw; /* Diminui o padding lateral */
+    padding-block: 3rem; /* Diminui o padding superior e inferior */
+  }
+
+  .title h3 {
+    font-size: 30px; /* Reduz o tamanho do título */
+    width: 100%; /* O título ocupa toda a largura disponível */
+  }
+
+  .row {
+    border-top: 1px solid #fff;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em coluna */
+    gap: 2rem;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    width: 100%;
+
+    /* Envolvendo o img em uma classe local */
+    img {
+      width: 20px;
+    }
+
+    .leftside,
+    .rightside {
+      width: 100%; /* Ambos os lados ocupam 100% da largura */
+    }
+
+    .leftside {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+
+      h3 {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      p {
+        color: #fff;
+        font-size: 1.5rem;
+      }
+    }
+
+    .rowTitle {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .rightside {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      p {
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
