@@ -89,16 +89,16 @@
 
   @keyframes changeBackground {
     0% {
-      background-image: url("/bg1.jpg");
+      background-image: url("/bg1.webp");
     }
     33% {
-      background-image: url("/bg2.jpg");
+      background-image: url("/bg2.webp");
     }
     66% {
-      background-image: url("/bg3.jpg");
+      background-image: url("/bg3.webp");
     }
     100% {
-      background-image: url("/bg1.jpg");
+      background-image: url("/bg1.webp");
     }
   }
 }
