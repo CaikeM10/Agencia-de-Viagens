@@ -4,8 +4,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;/* Garante que ele fique acima do Banner */
-  display: none; /* para fazer o responsivo */
+  z-index: 10; /* Garante que ele fique acima do Banner */
+    transition: background-color 0.3s ease;
+  @media (max-width: 768px) {
+    position: fixed;
+    &.scrolled {
+      background-color:#284e78 ;
+    }
+  }
 }
 
 .content {
@@ -14,18 +20,22 @@
   padding-top: 15px;
   padding-inline: 8vw;
   align-items: center;
-
   width: 100%;
+  @media (max-width: 768px) {
+    padding-block: 15px;
+  }
 }
 
 .leftside {
   display: flex;
   align-items: center;
   gap: 20px;
+
   img {
     width: 100px;
     filter: brightness(0) invert(1);
   }
+
   p {
     color: #fff;
     font-weight: 600;
@@ -38,6 +48,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
   button {
     color: #fff;
     font-weight: 500;
@@ -65,9 +76,7 @@
       transform: scale(1.05); /* Aumenta levemente o tamanho */
 
       .icon {
-        transform: rotate(
-          20deg
-        ); /* Pequena rotação no ícone ao passar o mouse */
+        transform: rotate(20deg); /* Pequena rotação no ícone ao passar o mouse */
       }
     }
   }
@@ -91,6 +100,7 @@
 
     .arrow {
       font-size: 14px;
+      color: #fff;
       margin-left: 5px;
     }
   }
@@ -122,3 +132,131 @@
     }
   }
 }
+
+/* Menu Hamburguer visível apenas em telas pequenas */
+/* Menu Hamburguer visível apenas em telas pequenas */
+@media (max-width: 768px) {
+  .leftside p {
+    display: none; /* Esconde os itens do menu em telas pequenas */
+  }
+
+  .hamburgerMenu {
+    display: block;
+    cursor: pointer;
+    z-index: 20;
+
+    .line {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .navMenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #284e78;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 35%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(100%); /* Move off-screen to the right */
+    opacity: 0;
+    visibility: hidden; /* Initially hidden */
+    z-index: 15;
+  
+    &.open {
+      transform: translateX(0); /* Bring menu into view */
+      opacity: 1;
+      visibility: visible; /* Ensure it's visible when open */
+    }
+  
+    &.closing {
+      transform: translateX(100%); /* Move off-screen to the right when closing */
+      opacity: 0;
+    }
+  
+    p {
+      color: #fff;
+      font-size: 24px;
+      margin: 15px 0;
+    }
+  }
+  
+
+  .rightside {
+    display: none; /* Esconde o botão de contato em telas pequenas */
+  }
+
+  /* Centraliza o seletor de linguagem no menu em telas pequenas */
+  .languageSwitcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento opcional para melhor visualização */
+
+    .selectedLanguage {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .flag {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .arrow {
+        font-size: 14px;
+      }
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 60px;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+
+      .flag {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 5px;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+/* Ocultando o menu hamburguer em telas grandes */
+@media (min-width: 769px) {
+  .hamburgerMenu {
+    display: none; /* Esconde o menu hamburguer em telas grandes */
+  }
+
+  .navMenu {
+    display: none; /* Esconde o menu lateral em telas grandes */
+  }
+
+  .rightside {
+    display: flex; /* Exibe o botão de contato em telas grandes */
+  }
+}
+

@@ -423,29 +423,34 @@ export default function CaseStudies({ language }: CaseStudiesProps) {
         </div>
         <div className={styles.grid}>
           {sortedStudies.map((study, index) => (
-            <div
-              key={study.id}
-              className={`${styles.item} ${
-                study.category !== selectedCategory &&
-                selectedCategory !== "todos"
-                  ? styles.hidden
-                  : ""
-              }`}
-              ref={(el) => {
-                if (el) cardRefs.current[index] = el;
-              }}
-            >
-              <img src={study.image} alt={study.title} />
-              <div className={styles.overlay}>
-                <h5>{study.title}</h5>
-                <p className={styles.description}>{study.description}</p>
-                <img
-                  src="/arrowWhite.svg"
-                  alt="Arrow"
-                  className={styles.arrow}
-                />
-              </div>
-            </div>
+          <div
+          key={study.id}
+          className={`${styles.item} ${
+            study.category !== selectedCategory && selectedCategory !== "todos"
+              ? styles.hidden
+              : ""
+          }`}
+          ref={(el) => {
+            if (el) cardRefs.current[index] = el;
+          }}
+          onClick={() => {
+            const message = `Gostaria de saber mais sobre ${study.title}`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/5581991192880?text=${encodedMessage}`, "_blank");
+          }}
+        >
+          <img src={study.image} alt={study.title} />
+          <div className={styles.overlay}>
+            <h5>{study.title}</h5>
+            <p className={styles.description}>{study.description}</p>
+            <img
+              src="/arrowWhite.svg"
+              alt="Arrow"
+              className={styles.arrow}
+            />
+          </div>
+        </div>
+        
           ))}
         </div>
       </div>

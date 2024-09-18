@@ -85,6 +85,7 @@
   background-size: cover;
   background-position: center;
   background-color: #1f3a5f; /* Usando o mesmo azul marinho para consistência */
+  
   animation: changeBackground 15s infinite;
 
   @keyframes changeBackground {
