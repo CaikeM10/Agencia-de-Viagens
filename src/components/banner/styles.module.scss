@@ -5,12 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .bannerContent {
   display: flex;
   width: 100%;
   min-height: 100vh;
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .leftSide {
@@ -169,6 +173,60 @@
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (max-width: 768px) {
+  .banner {
+    justify-content: center;
+    align-items: center;
+  }
+
+.leftSide {
+  height: 500px;
+}
+
+.rightside{
+  height: 500px;
+}
+
+  .leftSide, .rightside {
+    width: 100%; /* Ajusta os lados para ocupar a largura total em telas menores */
+    justify-content: center; /* Centraliza os itens */
+    padding: 0;
+  }
+
+  .leftLines h1, .leftLines h2 {
+    font-size: 3rem; /* Reduz o tamanho da fonte */
+  }
+
+  .rightBox {
+    max-width: 50%;
+    text-align: center; /* Centraliza o texto dentro da caixa direita */
+    position: absolute;
+    left: 0;
+    
+  }
+
+  .description button {
+    gap: 1rem;
+    font-size: 1rem; /* Reduz o tamanho da fonte */
+  }
+
+  .description p {
+    font-size: 1rem;
+    margin-right: 100px;
+  }
+
+  .arrow {
+    width: 30px; /* Ajusta o tamanho da seta */
+  }
+
+  .title  {
+    max-width: 90%;
+
+  }
+}
+
+
 
 
 
