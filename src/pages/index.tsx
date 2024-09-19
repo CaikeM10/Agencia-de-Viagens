@@ -13,7 +13,7 @@ import { useRef, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 type Language = "pt" | "en" | "fr" | "es";
-
+//
 export default function Home() {
   const experienceRef = useRef(null);
   const stepsRef = useRef(null);
