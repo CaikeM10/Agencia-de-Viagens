@@ -84,8 +84,8 @@ export default function TravelShowcase({ language }: TravelShowcaseProps) {
         </div>
         <div className={styles.logo}>
           <img src="/logoCrop.png" alt="Logo" />
-          <hr />
-          <p>{text.slogan}</p>
+          {/* <hr />
+          <p>{text.slogan}</p> */}
         </div>
       </div>
     </section>

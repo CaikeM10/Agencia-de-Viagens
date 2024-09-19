@@ -2,7 +2,7 @@
   display: flex;
   min-height: 100vh;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
-    url("/hotel.jpg") no-repeat center center/cover;
+    url("/disney.webp") no-repeat center center/cover;
   background-attachment: fixed;
 }
 
@@ -52,7 +52,11 @@
     display: flex;
     flex-direction: column; /* Organiza os elementos em coluna */
     min-height: 100vh;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.1)
+      ),
       url("/hotel.jpg") no-repeat center center;
     background-size: cover; /* Garante que a imagem preencha o fundo */
     background-attachment: scroll; /* Altere de fixed para scroll em mobile */
@@ -96,6 +100,3 @@
     }
   }
 }
-
-
-

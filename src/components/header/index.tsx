@@ -4,27 +4,23 @@ import styles from "./styles.module.scss";
 type Language = "pt" | "en" | "fr" | "es";
 
 interface HeaderProps {
-  experienceRef: RefObject<HTMLElement>;
-  stepsRef: RefObject<HTMLElement>;
-  productsRef: RefObject<HTMLElement>;
-  travelShowcaseRef: RefObject<HTMLElement>;
+  aboutUsRef: RefObject<HTMLElement>;
+  servicesRef: RefObject<HTMLElement>;
   contactRef: RefObject<HTMLElement>;
   language: Language;
   setLanguage: (language: Language) => void;
 }
 
 export default function Header({
-  experienceRef,
-  stepsRef,
-  productsRef,
-  travelShowcaseRef,
+  aboutUsRef,
+  servicesRef,
   contactRef,
   language,
   setLanguage,
 }: HeaderProps) {
-  const [isOpen, setIsOpen] = useState(false); // Controla se o select está aberto ou fechado
-  const [menuOpen, setMenuOpen] = useState(false); // Controla o estado do menu hamburguer
-  const [scrolled, setScrolled] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -44,56 +40,45 @@ export default function Header({
     ref.current?.scrollIntoView({
       behavior: "smooth",
     });
-    setMenuOpen(false); // Fecha o menu ao clicar em um item
+    setMenuOpen(false);
   };
 
- 
-const [isClosing, setIsClosing] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-const handleMenuToggle = () => {
-  if (menuOpen) {
-    // If the menu is open, start the closing animation
-    setIsClosing(true);
-    setTimeout(() => {
-      setMenuOpen(false); // Close the menu after the animation
-      setIsClosing(false); // Reset the closing state
-    }, 300); // Duration should match the CSS transition (300ms)
-  } else {
-    // If the menu is closed, open it directly
-    setMenuOpen(true);
-  }
-};
+  const handleMenuToggle = () => {
+    if (menuOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setMenuOpen(false);
+        setIsClosing(false);
+      }, 300);
+    } else {
+      setMenuOpen(true);
+    }
+  };
 
   const translations = {
     pt: {
-      experience: "Experiência",
-      steps: "Passos",
-      products: "Produtos",
-      travelShowcase: "Prêmio",
+      aboutUs: "Quem Somos",
+      services: "Serviços",
       contact: "Contato",
       message: "Mande uma mensagem",
     },
     en: {
-      experience: "Experience",
-      steps: "Steps",
-      products: "Products",
-      travelShowcase: "Award",
+      aboutUs: "About Us",
+      services: "Services",
       contact: "Contact",
       message: "Send a message",
     },
     fr: {
-      experience: "Expérience",
-      steps: "Étapes",
-      products: "Produits",
-      travelShowcase: "Récompense",
+      aboutUs: "À propos",
+      services: "Services",
       contact: "Contact",
-      message: "Envoyez un message",
+      message: "Envoyer un message",
     },
     es: {
-      experience: "Experiencia",
-      steps: "Pasos",
-      products: "Productos",
-      travelShowcase: "Premio",
+      aboutUs: "Quiénes Somos",
+      services: "Servicios",
       contact: "Contacto",
       message: "Enviar un mensaje",
     },
@@ -102,51 +87,44 @@ const handleMenuToggle = () => {
   const text = translations[language];
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen); // Alterna o estado do dropdown
+    setIsOpen(!isOpen);
   };
 
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
-    setIsOpen(false); // Fecha o dropdown ao selecionar
+    setIsOpen(false);
   };
 
   return (
-    <header className={`${styles.container} ${scrolled ? styles.scrolled : ""}`}>
+    <header
+      className={`${styles.container} ${scrolled ? styles.scrolled : ""}`}
+    >
       <div className={styles.content}>
         <div className={styles.leftside}>
-          <img src="/logoCrop.png" alt="Logo" />
-          <p onClick={() => scrollToSection(experienceRef)}>
-            {text.experience}
-          </p>
-          <p onClick={() => scrollToSection(stepsRef)}>{text.steps}</p>
-          <p onClick={() => scrollToSection(productsRef)}>{text.products}</p>
-          <p onClick={() => scrollToSection(travelShowcaseRef)}>
-            {text.travelShowcase}
-          </p>
+          <img src="/logo.webp" alt="Logo" />
+          <p onClick={() => scrollToSection(aboutUsRef)}>{text.aboutUs}</p>
+          <p onClick={() => scrollToSection(servicesRef)}>{text.services}</p>
           <p onClick={() => scrollToSection(contactRef)}>{text.contact}</p>
         </div>
 
-        {/* Menu Hamburguer */}
-        <div
-          className={styles.hamburgerMenu}
-          onClick={handleMenuToggle}
+        {/* Hamburger Menu */}
+        <div className={styles.hamburgerMenu} onClick={handleMenuToggle}>
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
+        </div>
+
+        {/* Sidebar Menu (Open/Close based on menuOpen state) */}
+        <nav
+          className={`${styles.navMenu} ${menuOpen ? styles.open : ""} ${
+            isClosing ? styles.closing : ""
+          }`}
         >
-          <div className={styles.line}></div>
-          <div className={styles.line}></div>
-          <div className={styles.line}></div>
-        </div>
-
-        {/* Menu Lateral (Aberto/Fechado com o estado do menuOpen) */}
-        <nav className={`${styles.navMenu} ${menuOpen ? styles.open : ""} ${isClosing ? styles.closing : ""}`}>
-          <p onClick={() => scrollToSection(experienceRef)}>{text.experience}</p>
-          <p onClick={() => scrollToSection(stepsRef)}>{text.steps}</p>
-          <p onClick={() => scrollToSection(productsRef)}>{text.products}</p>
-          <p onClick={() => scrollToSection(travelShowcaseRef)}>
-            {text.travelShowcase}
-          </p>
+          <p onClick={() => scrollToSection(aboutUsRef)}>{text.aboutUs}</p>
+          <p onClick={() => scrollToSection(servicesRef)}>{text.services}</p>
           <p onClick={() => scrollToSection(contactRef)}>{text.contact}</p>
 
-          {/* Adicionando o seletor de idioma dentro do menu lateral */}
+          {/* Language Selector inside the sidebar menu */}
           <div className={styles.languageSwitcher}>
             <div className={styles.selectedLanguage} onClick={toggleDropdown}>
               <img

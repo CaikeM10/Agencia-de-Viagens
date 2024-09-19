@@ -5,11 +5,11 @@
   left: 0;
   width: 100%;
   z-index: 10; /* Garante que ele fique acima do Banner */
-    transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   @media (max-width: 768px) {
     position: fixed;
     &.scrolled {
-      background-color:#284e78 ;
+      background-color: #284e78;
     }
   }
 }
@@ -32,7 +32,7 @@
   gap: 20px;
 
   img {
-    width: 100px;
+    width: 80px;
     filter: brightness(0) invert(1);
   }
 
@@ -76,7 +76,9 @@
       transform: scale(1.05); /* Aumenta levemente o tamanho */
 
       .icon {
-        transform: rotate(20deg); /* Pequena rotação no ícone ao passar o mouse */
+        transform: rotate(
+          20deg
+        ); /* Pequena rotação no ícone ao passar o mouse */
       }
     }
   }
@@ -171,25 +173,26 @@
     opacity: 0;
     visibility: hidden; /* Initially hidden */
     z-index: 15;
-  
+
     &.open {
       transform: translateX(0); /* Bring menu into view */
       opacity: 1;
       visibility: visible; /* Ensure it's visible when open */
     }
-  
+
     &.closing {
-      transform: translateX(100%); /* Move off-screen to the right when closing */
+      transform: translateX(
+        100%
+      ); /* Move off-screen to the right when closing */
       opacity: 0;
     }
-  
+
     p {
       color: #fff;
       font-size: 24px;
       margin: 15px 0;
     }
   }
-  
 
   .rightside {
     display: none; /* Esconde o botão de contato em telas pequenas */
@@ -259,4 +262,3 @@
     display: flex; /* Exibe o botão de contato em telas grandes */
   }
 }
-

@@ -18,7 +18,7 @@
 
   .categories {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
 
     button {
@@ -38,9 +38,9 @@
         font-weight: bold;
         border-bottom: 2px solid black;
         @media screen and (max-width: 768px) {
-          border-bottom: none
-          ;
-      }}
+          border-bottom: none;
+        }
+      }
 
       &:hover {
         color: black;
@@ -148,7 +148,7 @@
     align-items: center; /* Centralizando os botões */
     gap: 10px; /* Espaçamento entre os botões */
     margin-bottom: 20px; /* Adiciona espaço abaixo das categorias */
-  
+
     button {
       font-size: 14px; /* Fonte menor */
       padding: 6px 12px; /* Padding ajustado nos botões */
@@ -156,13 +156,13 @@
       max-width: none; /* Remove qualquer limite de largura */
       text-align: center; /* Centraliza o texto nos botões */
       position: relative; /* Para permitir a linha embaixo */
-  
+
       &.active {
         border-bottom: none;
       }
-  
+
       &.active::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -175,7 +175,6 @@
       }
     }
   }
-  
 
   .grid {
     display: flex;
@@ -195,10 +194,3 @@
     }
   }
 }
-
-
-
-
-
-
-

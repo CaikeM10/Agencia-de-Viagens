@@ -15,10 +15,8 @@ const inter = Inter({ subsets: ["latin"] });
 type Language = "pt" | "en" | "fr" | "es";
 
 export default function Home() {
-  const experienceRef = useRef(null);
-  const stepsRef = useRef(null);
-  const productsRef = useRef(null);
-  const travelShowcaseRef = useRef(null);
+  const aboutUsRef = useRef(null);
+  const servicesRef = useRef(null);
   const contactRef = useRef(null);
 
   const [language, setLanguage] = useState<Language>("pt");
@@ -28,24 +26,22 @@ export default function Home() {
       <ScrollProgressBar />
       <Banner language={language} />
       <Header
-        experienceRef={experienceRef}
-        stepsRef={stepsRef}
-        productsRef={productsRef}
-        travelShowcaseRef={travelShowcaseRef}
+        aboutUsRef={aboutUsRef}
+        servicesRef={servicesRef}
         contactRef={contactRef}
         language={language}
         setLanguage={setLanguage}
       />
-      <div ref={experienceRef}>
+      <div ref={aboutUsRef}>
         <Experience language={language} />
       </div>
-      <div ref={stepsRef}>
+      <div>
         <Steps language={language} />
       </div>
-      <div ref={productsRef}>
+      <div ref={servicesRef}>
         <CaseStudies language={language} />
       </div>
-      <div ref={travelShowcaseRef}>
+      <div>
         <TravelShowcase language={language} />
       </div>
       <div ref={contactRef}>

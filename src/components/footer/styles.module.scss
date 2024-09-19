@@ -133,12 +133,17 @@
 
 .rightBottom {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   img {
     width: 120px;
-    height: 100%;
+    height: auto;
     filter: brightness(0) invert(0);
     cursor: pointer;
+  }
+  .image {
+    width: 85px;
+    filter: none;
   }
 }
 
@@ -172,8 +177,6 @@
   }
 }
 
-
-
 @media screen and (max-width: 768px) {
   .content {
     padding-inline: 4vw;
@@ -202,7 +205,8 @@
     }
   }
 
-  .middle, .rightside {
+  .middle,
+  .rightside {
     align-items: center;
     text-align: center;
   }
@@ -211,11 +215,13 @@
     margin-top: 30px;
   }
 
-  .box, .box2 {
+  .box,
+  .box2 {
     align-items: center;
     gap: 25px;
 
-    h5, h4 {
+    h5,
+    h4 {
       font-size: 14px;
     }
 
@@ -228,41 +234,33 @@
     align-items: center;
     justify-content: center;
     gap: 20px; /* Reduzi o espaçamento entre os elementos */
-  
+
     img {
       width: 100px;
       margin-top: 20px;
     }
   }
 
-  .rightside .rightTop{
+  .rightside .rightTop {
     margin-top: 35px;
   }
-  
+
   .bottom {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 10px; /* Mantém o espaçamento no rodapé */
   }
-  
-  .leftBottom, .rightBottom {
+
+  .leftBottom,
+  .rightBottom {
     p {
       font-size: 14px;
     }
   }
-  
+
   .inputContainer {
     width: 100%;
     max-width: 100%; /* Ajusta a largura total do container de input */
   }
-
-  
 }
-
-
-
-
-
-
-
