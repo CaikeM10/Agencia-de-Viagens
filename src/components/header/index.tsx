@@ -24,7 +24,7 @@ export default function Header({
 }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false); // Controla se o select está aberto ou fechado
   const [menuOpen, setMenuOpen] = useState(false); // Controla o estado do menu hamburguer
-  const [scrolled, setScrolled] = useState(false); 
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -47,22 +47,21 @@ export default function Header({
     setMenuOpen(false); // Fecha o menu ao clicar em um item
   };
 
- 
-const [isClosing, setIsClosing] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-const handleMenuToggle = () => {
-  if (menuOpen) {
-    // If the menu is open, start the closing animation
-    setIsClosing(true);
-    setTimeout(() => {
-      setMenuOpen(false); // Close the menu after the animation
-      setIsClosing(false); // Reset the closing state
-    }, 300); // Duration should match the CSS transition (300ms)
-  } else {
-    // If the menu is closed, open it directly
-    setMenuOpen(true);
-  }
-};
+  const handleMenuToggle = () => {
+    if (menuOpen) {
+      // If the menu is open, start the closing animation
+      setIsClosing(true);
+      setTimeout(() => {
+        setMenuOpen(false); // Close the menu after the animation
+        setIsClosing(false); // Reset the closing state
+      }, 300); // Duration should match the CSS transition (300ms)
+    } else {
+      // If the menu is closed, open it directly
+      setMenuOpen(true);
+    }
+  };
 
   const translations = {
     pt: {
@@ -111,10 +110,15 @@ const handleMenuToggle = () => {
   };
 
   return (
-    <header className={`${styles.container} ${scrolled ? styles.scrolled : ""}`}>
+    <header
+      className={`${styles.container} ${scrolled ? styles.scrolled : ""}`}
+    >
       <div className={styles.content}>
         <div className={styles.leftside}>
           <img src="/logoCrop.png" alt="Logo" />
+        </div>
+
+        <div className={styles.centerNav}>
           <p onClick={() => scrollToSection(experienceRef)}>
             {text.experience}
           </p>
@@ -125,20 +129,21 @@ const handleMenuToggle = () => {
           </p>
           <p onClick={() => scrollToSection(contactRef)}>{text.contact}</p>
         </div>
-
-        {/* Menu Hamburguer */}
-        <div
-          className={styles.hamburgerMenu}
-          onClick={handleMenuToggle}
-        >
+        <div className={styles.hamburgerMenu} onClick={handleMenuToggle}>
           <div className={styles.line}></div>
           <div className={styles.line}></div>
           <div className={styles.line}></div>
         </div>
 
         {/* Menu Lateral (Aberto/Fechado com o estado do menuOpen) */}
-        <nav className={`${styles.navMenu} ${menuOpen ? styles.open : ""} ${isClosing ? styles.closing : ""}`}>
-          <p onClick={() => scrollToSection(experienceRef)}>{text.experience}</p>
+        <nav
+          className={`${styles.navMenu} ${menuOpen ? styles.open : ""} ${
+            isClosing ? styles.closing : ""
+          }`}
+        >
+          <p onClick={() => scrollToSection(experienceRef)}>
+            {text.experience}
+          </p>
           <p onClick={() => scrollToSection(stepsRef)}>{text.steps}</p>
           <p onClick={() => scrollToSection(productsRef)}>{text.products}</p>
           <p onClick={() => scrollToSection(travelShowcaseRef)}>

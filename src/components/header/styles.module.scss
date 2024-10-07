@@ -5,11 +5,11 @@
   left: 0;
   width: 100%;
   z-index: 10; /* Garante que ele fique acima do Banner */
-    transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   @media (max-width: 768px) {
     position: fixed;
     &.scrolled {
-      background-color:#284e78 ;
+      background-color: #284e78;
     }
   }
 }
@@ -25,11 +25,23 @@
     padding-block: 15px;
   }
 }
+.centerNav {
+  flex: 2; /* Ensures the menu is centered */
+  display: flex;
+  justify-content: center; /* Center the nav items */
+  gap: 20px;
 
+  p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 19px;
+    cursor: pointer;
+  }
+}
 .leftside {
+  flex: 1; /* Ensures it takes space on the left */
   display: flex;
   align-items: center;
-  gap: 20px;
 
   img {
     width: 100px;
@@ -45,9 +57,10 @@
 }
 
 .rightside {
+  flex: 1; /* Ensures it takes space on the right */
   display: flex;
+  justify-content: flex-end; /* Aligns the button to the right */
   align-items: center;
-  gap: 20px;
 
   button {
     color: #fff;
@@ -76,7 +89,9 @@
       transform: scale(1.05); /* Aumenta levemente o tamanho */
 
       .icon {
-        transform: rotate(20deg); /* Pequena rotação no ícone ao passar o mouse */
+        transform: rotate(
+          20deg
+        ); /* Pequena rotação no ícone ao passar o mouse */
       }
     }
   }
@@ -171,25 +186,26 @@
     opacity: 0;
     visibility: hidden; /* Initially hidden */
     z-index: 15;
-  
+
     &.open {
       transform: translateX(0); /* Bring menu into view */
       opacity: 1;
       visibility: visible; /* Ensure it's visible when open */
     }
-  
+
     &.closing {
-      transform: translateX(100%); /* Move off-screen to the right when closing */
+      transform: translateX(
+        100%
+      ); /* Move off-screen to the right when closing */
       opacity: 0;
     }
-  
+
     p {
       color: #fff;
       font-size: 24px;
       margin: 15px 0;
     }
   }
-  
 
   .rightside {
     display: none; /* Esconde o botão de contato em telas pequenas */
@@ -259,4 +275,3 @@
     display: flex; /* Exibe o botão de contato em telas grandes */
   }
 }
-

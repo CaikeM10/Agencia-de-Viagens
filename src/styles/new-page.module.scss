@@ -1,0 +1,127 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 8vw;
+  transition: background-image 0.5s ease-in-out;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
+    h1,
+    p {
+      animation: slideInDown 0.6s ease forwards; /* Aplica a animação ao título e ao texto */
+    }
+    h1 {
+      font-size: 5vw;
+      color: white;
+    }
+    p {
+      font-size: 1vw;
+      color: white;
+
+      max-width: 600px;
+    }
+    .exploreButton {
+      padding: 20px 50px;
+      max-width: fit-content;
+      background-color: #1f3a5f;
+      font-weight: bold;
+      margin-top: 40px;
+      font-size: 1.5vw;
+      border-radius: 10px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  }
+
+  .slider {
+    width: 60%;
+    margin: 0 !important;
+    position: relative;
+    .swiper-slide {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    z-index: 1000000;
+    top: 0 !important;
+  }
+}
+.imageCard {
+  width: 50%;
+  height: 100%;
+  min-height: 500px;
+  background-size: cover; /* Garante que a imagem cubra toda a div */
+  background-position: center;
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0 50px;
+  transition: background-image 0.5s ease-in-out;
+}
+.imageContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.imageCard {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.customNavButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20%;
+  right: 50%;
+  gap: 30px;
+
+  button {
+    width: 50px; // Set equal width and height
+    height: 50px;
+    border-radius: 50%; // Makes the button fully round
+    background-color: #1f3a5f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    &:hover {
+      background-color: #3c506f; // Optional: Change hover color to be slightly different
+    }
+  }
+}
+.swiperContent {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
