@@ -48,7 +48,7 @@ export default function NewPage() {
     },
     {
       title: "Tokyo",
-      description: "Tokyo é uma cidade incrível e cheia de cultura.",
+      description: "Tokyo é uma cidade incrível e cheia de cultura e história.",
       backgroundImage: "/images/bali.jpg",
       pageBackground: "/images/tokyo.jpg",
     },
@@ -59,17 +59,17 @@ export default function NewPage() {
   const stepsRef = useRef(null);
   const productsRef = useRef(null);
   const travelShowcaseRef = useRef(null);
+
+  const aboutUsRef = useRef(null);
+  const servicesRef = useRef(null);
   const contactRef = useRef(null);
 
   const [language, setLanguage] = useState<Language>("pt");
-
   return (
     <>
       <Header
-        experienceRef={experienceRef}
-        stepsRef={stepsRef}
-        productsRef={productsRef}
-        travelShowcaseRef={travelShowcaseRef}
+        aboutUsRef={aboutUsRef}
+        servicesRef={servicesRef}
         contactRef={contactRef}
         language={language}
         setLanguage={setLanguage}

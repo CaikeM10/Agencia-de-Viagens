@@ -84,22 +84,21 @@
   align-items: flex-end;
   background-size: cover;
   background-position: center;
-  background-color: #1f3a5f; /* Usando o mesmo azul marinho para consistência */
-  
-  animation: changeBackground 15s infinite;
+  background-color: #1f3a5f;
+  animation: changeBackground 20s infinite;
 
   @keyframes changeBackground {
     0% {
-      background-image: url("/bg1.webp");
+      background-image: url("/york.webp");
     }
     33% {
-      background-image: url("/bg2.webp");
+      background-image: url("/maldives.webp");
     }
     66% {
-      background-image: url("/bg3.webp");
+      background-image: url("/japan.webp");
     }
     100% {
-      background-image: url("/bg1.webp");
+      background-image: url("/york.webp");
     }
   }
 }
@@ -181,21 +180,23 @@
     align-items: center;
   }
 
-.leftSide {
-  height: 500px;
-}
+  .leftSide {
+    height: 500px;
+  }
 
-.rightside{
-  height: 500px;
-}
+  .rightside {
+    height: 500px;
+  }
 
-  .leftSide, .rightside {
-    width: 100%; /* Ajusta os lados para ocupar a largura total em telas menores */
-    justify-content: center; /* Centraliza os itens */
+  .leftSide,
+  .rightside {
+    width: 100%;
+    justify-content: center;
     padding: 0;
   }
 
-  .leftLines h1, .leftLines h2 {
+  .leftLines h1,
+  .leftLines h2 {
     font-size: 3rem; /* Reduz o tamanho da fonte */
   }
 
@@ -204,7 +205,6 @@
     text-align: center; /* Centraliza o texto dentro da caixa direita */
     position: absolute;
     left: 0;
-    
   }
 
   .description button {
@@ -221,14 +221,7 @@
     width: 30px; /* Ajusta o tamanho da seta */
   }
 
-  .title  {
+  .title {
     max-width: 90%;
-
   }
 }
-
-
-
-
-
-
