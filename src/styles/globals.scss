@@ -118,3 +118,31 @@ a {
     color-scheme: dark;
   }
 }
+
+.custom-swiper {
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 108%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+  }
+  //
+  .swiper-button-prev {
+    background-image: url("/arrowS.svg");
+    transform: rotate(180deg);
+  }
+
+  .swiper-button-next {
+    background-image: url("/arrowS.svg");
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    content: "";
+  }
+}

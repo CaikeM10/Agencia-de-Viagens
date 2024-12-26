@@ -1,5 +1,6 @@
 import { RefObject, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 type Language = "pt" | "en" | "fr" | "es";
 
@@ -106,7 +107,9 @@ export default function Header({
         <div className={styles.centerNav}>
           {" "}
           <p onClick={() => scrollToSection(aboutUsRef)}>{text.aboutUs}</p>
-          <p onClick={() => scrollToSection(servicesRef)}>{text.services}</p>
+          <Link href="/servicos">
+            <p onClick={() => scrollToSection(servicesRef)}>{text.services}</p>
+          </Link>
           <p onClick={() => scrollToSection(contactRef)}>{text.contact}</p>{" "}
         </div>
         {/* Hamburger Menu */}
