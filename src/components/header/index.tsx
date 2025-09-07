@@ -102,7 +102,8 @@ export default function Header({
     >
       <div className={styles.content}>
         <div className={styles.leftside}>
-          <img src="/logo.webp" alt="Logo" />
+          /logo para alteração
+          <img src="/logo.wep" alt="Logo" />
         </div>
         <div className={styles.centerNav}>
           {" "}
@@ -180,9 +181,7 @@ export default function Header({
 
         <div className={styles.rightside}>
           <button
-            onClick={() =>
-              window.open("https://wa.me/message/AVAYUU2HYYIOJ1", "_blank")
-            }
+            onClick={() => window.open("https://wa.me/5511967930315", "_blank")}
           >
             <img
               src="/mail2.svg"

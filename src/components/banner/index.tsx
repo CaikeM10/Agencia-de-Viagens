@@ -8,24 +8,24 @@ export default function Banner({ language }: BannerProps) {
   // Textos traduzidos
   const translations = {
     pt: {
-      title1: "EASY",
-      title2: "VISA",
-      description: "Somos a maior agência de viagem com o preço mais justo!",
+      title1: "EAI",
+      title2: "DESTINO",
+      description: "Somos a melhor agência de viagem com o preço mais justo!",
       buttonText: "Saiba mais!",
       rightBoxTitle: "Conheça lugares incríveis!",
       rightBoxDescription: "Entre em contato conosco e realize um orçamento!",
     },
     en: {
-      title1: "EASY",
-      title2: "VISA",
+      title1: "EAI",
+      title2: "DESTINATION",
       description: "We are the largest travel agency with the best prices!",
       buttonText: "Learn more!",
       rightBoxTitle: "Discover amazing places!",
       rightBoxDescription: "Contact us for a quote!",
     },
     fr: {
-      title1: "EASY",
-      title2: "VISA",
+      title1: "EAI",
+      title2: "DESTINATION",
       description:
         "Nous sommes la plus grande agence de voyage avec les meilleurs prix!",
       buttonText: "En savoir plus!",
@@ -33,8 +33,8 @@ export default function Banner({ language }: BannerProps) {
       rightBoxDescription: "Contactez-nous pour un devis!",
     },
     es: {
-      title1: "EASY",
-      title2: "VISA",
+      title1: "EAI",
+      title2: "DESTINO",
       description:
         "¡Somos la agencia de viajes más grande con los mejores precios!",
       buttonText: "Saber más!",
