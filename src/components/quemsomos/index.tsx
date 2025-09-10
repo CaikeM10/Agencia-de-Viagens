@@ -6,7 +6,7 @@ export default function QuemSomos() {
       <div className={styles.content}>
         <h1>Quem Somos</h1>
         <p>
-          Na <strong>Easy Visa</strong> buscamos{" "}
+          Na <strong>Na Eai Destino</strong> buscamos{" "}
           <strong>democratizar os espaços</strong> de viagem e mostrar que todos
           podem realizar seus sonhos. Com <strong>cobertura global</strong> e
           serviços personalizados, transformamos suas aspirações de viagem em

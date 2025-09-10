@@ -438,7 +438,7 @@ export default function CaseStudies({ language }: CaseStudiesProps) {
                 const message = `Gostaria de saber mais sobre ${study.title}`;
                 const encodedMessage = encodeURIComponent(message);
                 window.open(
-                  `https://wa.me/5581991192880?text=${encodedMessage}`,
+                  `https://wa.me/5511967930315?text=${encodedMessage}`,
                   "_blank"
                 );
               }}

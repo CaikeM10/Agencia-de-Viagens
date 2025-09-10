@@ -7,19 +7,19 @@ interface ScrollTextProps {
 
 const translations = {
   pt: {
-    companyName: "EASY VISA",
+    companyName: "EAI DESTINO",
     slogan: "A MELHOR AGÊNCIA DE VIAGEM",
   },
   en: {
-    companyName: "EASY VISA",
+    companyName: "EAi DESTINATION",
     slogan: "THE BEST TRAVEL AGENCY",
   },
   fr: {
-    companyName: "EASY VISA",
+    companyName: "EAI DESTINATION",
     slogan: "LA MEILLEURE AGENCE DE VOYAGE",
   },
   es: {
-    companyName: "EASY VISA",
+    companyName: "EAI DESTINO",
     slogan: "LA MEJOR AGENCIA DE VIAJES",
   },
 };

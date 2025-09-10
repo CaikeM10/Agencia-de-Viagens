@@ -13,7 +13,8 @@ export default function Banner({ language }: BannerProps) {
       description: "Somos a melhor agência de viagem com o preço mais justo!",
       buttonText: "Saiba mais!",
       rightBoxTitle: "Conheça lugares incríveis!",
-      rightBoxDescription: "Entre em contato conosco e realize um orçamento!",
+      rightBoxDescription:
+        "Entre em contato conosco, faça um orçamento agora mesmo!",
     },
     en: {
       title1: "EAI",
@@ -71,10 +72,7 @@ export default function Banner({ language }: BannerProps) {
                 </p>
                 <button
                   onClick={() =>
-                    window.open(
-                      "https://wa.me/message/AVAYUU2HYYIOJ1",
-                      "_blank"
-                    )
+                    window.open("https://wa.me/5511967930315", "_blank")
                   }
                 >
                   <img

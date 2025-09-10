@@ -14,7 +14,7 @@ const translations = {
     remoteService: "Atendimento remoto",
     subscribeTitle: "INSCREVA-SE PARA RECEBER NOVIDADES",
     privacy: "Garantimos a proteção da sua privacidade",
-    footerText: "© 2024 Easy Visa desenvolvido por SolidTech",
+    footerText: "© 2025 Eai Destino desenvolvido por Caike Marinho.",
     privacyPolicy: "Política de Privacidade",
     termsConditions: "Termos e Condições",
     copyrights: "Direitos Autorais",
@@ -27,7 +27,7 @@ const translations = {
     remoteService: "Remote service",
     subscribeTitle: "SUBSCRIBE TO RECEIVE UPDATES",
     privacy: "We guarantee the protection of your privacy",
-    footerText: "© 2024 Easy Visa developed by SolidTech",
+    footerText: "© 2025 Eai Destino developed by Caike Marinho.",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms and Conditions",
     copyrights: "Copyright",
@@ -40,7 +40,7 @@ const translations = {
     remoteService: "Service à distance",
     subscribeTitle: "INSCRIVEZ-VOUS POUR RECEVOIR LES NOUVELLES",
     privacy: "Nous garantissons la protection de votre vie privée",
-    footerText: "© 2024 Easy Visa développé par SolidTech",
+    footerText: "© 2025 Eai Destino développé par Caike Marinho.",
     privacyPolicy: "Politique de Confidentialité",
     termsConditions: "Termes et Conditions",
     copyrights: "Droits d'Auteur",
@@ -53,7 +53,7 @@ const translations = {
     remoteService: "Atención remota",
     subscribeTitle: "SUSCRÍBETE PARA RECIBIR NOVEDADES",
     privacy: "Garantizamos la protección de tu privacidad",
-    footerText: "© 2024 Easy Visa desarrollado por SolidTech",
+    footerText: "© 2025 Eai Destino desarrollado por Caike Marinho.",
     privacyPolicy: "Política de Privacidad",
     termsConditions: "Términos y Condiciones",
     copyrights: "Derechos de Autor",
@@ -68,12 +68,12 @@ export default function Footer({ language }: FooterProps) {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.leftside}>
-            <img src="/logoCrop.png" alt="Logo Easy Visa" />
+            <img src="/logo redondo.png" alt="Logo Eai Destino" />
             <div className={styles.letters}>
-              <Link href="https://www.instagram.com/agenciaeasyvisa/">
+              <Link href="https://www.instagram.com/eaidestino/">
                 <img src="/instagram.svg" alt="insta" />
               </Link>
-              <Link href="https://wa.me/message/AVAYUU2HYYIOJ1">
+              <Link href="https://wa.me/5511967930315">
                 <img src="/whatsapp.svg" alt="whats" />
               </Link>
             </div>
@@ -83,13 +83,14 @@ export default function Footer({ language }: FooterProps) {
             <div className={styles.box2}>
               <h5>{text.serviceQuestions}</h5>
               <p>{text.onlineService}</p>
-              <h4>contato@easyvisa.com.br</h4>
+              <h4>contato@eaidestino.com.br</h4>
             </div>
             <div className={styles.box2}>
               <h5>{text.customerSupport}</h5>
               <p>{text.availableInBrazil}</p>
               <p>{text.remoteService}</p>
-              <h4>suporte@easyvisa.com.br</h4>
+              <h4>suporte@eaidestino.com.br</h4>
+              <h4>contato +55 (11) 967930315</h4>
             </div>
           </div>
 
@@ -112,7 +113,7 @@ export default function Footer({ language }: FooterProps) {
               <Link href="https://www.reclameaqui.com.br/">
                 <img src="reclame.png" alt="reclame" />
               </Link>
-              <Link href="https://cadastur.turismo.gov.br/cadastur/#!/public/qrcode/56684836000107">
+              <Link href="https://cadastur.turismo.gov.br/cadastur/#!/public/qrcode/54299788000108">
                 <img src="cadastur.png" alt="cadastur" />
               </Link>
             </div>

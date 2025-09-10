@@ -21,7 +21,7 @@ export default function Footer2() {
               </div>
               <div className={styles.row}>
                 <img src="/phone.svg" alt="" />
-                <p>+55 (99) 999 99999</p>
+                <p>+55 (11) 9967930315</p>
               </div>
             </div>
             <div className={styles.right}>
@@ -32,7 +32,7 @@ export default function Footer2() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <p>Easy Visa© 2024 - Todos os direitos reservados</p>
+          <p>Eai Destino© 2025 - Todos os direitos reservados</p>
         </div>
       </div>
     </>

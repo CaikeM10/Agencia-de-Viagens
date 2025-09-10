@@ -346,6 +346,7 @@ export default function NewPage() {
                 </p>
                 <button className={styles.exploreButton}>Saiba Mais</button>
               </div>
+
               <div className={styles.customNavButtons}>
                 <button
                   onClick={() => childSwiperRefs.current[index]?.slidePrev()}

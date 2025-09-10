@@ -44,11 +44,11 @@ export default function CardSection() {
           <div className={styles.rowWrap}>
             <div className={styles.row}>
               <img src="/mapPin.svg" alt="" />
-              <p>Endereço: Rua exemplo, 1234</p>
+              <p> São Paulo, SP</p>
             </div>
             <div className={styles.row}>
               <img src="/phone.svg" alt="" />
-              <p>+55 (99) 999 99999</p>
+              <p>+55 (11) 967930315</p>
             </div>
           </div>
         </div>

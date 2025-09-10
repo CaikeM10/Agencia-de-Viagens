@@ -102,8 +102,7 @@ export default function Header({
     >
       <div className={styles.content}>
         <div className={styles.leftside}>
-          /logo para alteração
-          <img src="/logo.wep" alt="Logo" />
+          <img src="/logo redondo.png" alt="Logo" />
         </div>
         <div className={styles.centerNav}>
           {" "}

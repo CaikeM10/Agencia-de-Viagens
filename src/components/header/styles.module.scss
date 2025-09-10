@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 15px;
-  padding-inline: 8vw;
+  padding-inline: 2vw;
   align-items: center;
   width: 100%;
   @media (max-width: 768px) {
@@ -44,8 +44,8 @@
   align-items: center;
 
   img {
-    width: 80px;
-    filter: brightness(0) invert(1);
+    width: 92px;
+    /*filter: brightness(0) invert(1);*/
   }
 
   p {
@@ -153,6 +153,8 @@
 @media (max-width: 768px) {
   .leftside p {
     display: none; /* Esconde os itens do menu em telas pequenas */
+    justify-content: left;
+    margin-right: 20px;
   }
 
   .hamburgerMenu {
@@ -167,6 +169,10 @@
       margin: 5px;
       transition: all 0.3s ease;
     }
+  }
+
+  .centerNav {
+    display: none; /* Esconde o menu central em telas pequenas */
   }
 
   .navMenu {

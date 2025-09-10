@@ -5,7 +5,7 @@ export default function BannerServices() {
     <div className={styles.container}>
       <div className={styles.content}>
         <h1>Nossos Serviços</h1>
-        <h4>Abaixo estão alguns dos nossos serviços, explore!</h4>
+        <h4>Abaixo estão alguns dos nossos serviços ofertados, explore!</h4>
         <img src="/arrowUp.svg" alt="" />
       </div>
     </div>
