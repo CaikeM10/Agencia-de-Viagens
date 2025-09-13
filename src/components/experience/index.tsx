@@ -12,7 +12,7 @@ export default function Experience({ language }: ExperienceProps) {
   const translations = {
     pt: {
       header:
-        "Somos uma empresa com o compromisso de transformar suas viagens em experiências incríveis",
+        "Na EAI DESTINO, transformamos o desejo de viajar em experiências reais e inesquecíveis.",
       experienceText: "120+ destinos disponíveis",
       experienceDescription:
         "Levamos você para mais de 120 destinos ao redor do mundo",

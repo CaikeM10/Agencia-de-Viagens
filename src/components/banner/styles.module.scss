@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1f3a5f; /* Um tom de azul marinho escuro */
+  background-color: #6b8ba2; /* Um tom de azul marinho escuro */
 }
 
 .leftLines {
@@ -58,17 +58,17 @@
 .leftLines h1::before {
   content: "";
   position: absolute;
-
   top: 60%;
   left: -3%;
   height: 80%;
   width: 0;
   background-image: url("/highlight.png");
+  filter: sepia(30%) saturate(200%) hue-rotate(-20deg) brightness(80%);
   background-repeat: no-repeat;
   background-size: auto 100%;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
   z-index: -1;
-  animation: revealHighlight 2s ease forwards;
+  animation: revealHighlight 7s ease forwards;
 }
 
 @keyframes revealHighlight {
@@ -84,8 +84,8 @@
   align-items: flex-end;
   background-size: cover;
   background-position: center;
-  background-color: #1f3a5f;
-  animation: changeBackground 20s infinite;
+  background-color: #6b8ba2;
+  animation: changeBackground 18s infinite;
 
   @keyframes changeBackground {
     0% {
@@ -106,7 +106,7 @@
 .rightBox {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: #fff3f3af;
   padding: 2rem;
   max-width: 18vw;
   display: flex;
@@ -118,10 +118,10 @@
     right: 8%;
   }
   h2 {
-    color: #1f3a5f; /* Cor branca suave */
+    color: #6b8ba2; /* Cor branca suave */
   }
   p {
-    color: #1f3a5f;
+    color: #000;
   }
 }
 
@@ -131,17 +131,18 @@
   button {
     cursor: pointer;
     background: none;
+
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    color: #f0f4f8;
+    gap: 3rem;
+    color: #da8a67;
     font-size: 1.25rem;
     font-weight: bold;
     margin-top: 10%;
     .arrow {
-      width: 50px;
+      width: 60px;
     }
   }
   p {
@@ -218,7 +219,7 @@
   }
 
   .arrow {
-    width: 30px; /* Ajusta o tamanho da seta */
+    width: 32px; /* Ajusta o tamanho da seta */
   }
 
   .title {

@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #133558;
+  background-color: #6b8ba2;
   position: relative;
   transition: transform 0.1s ease-out, box-shadow 0.3s ease; /* Added box-shadow transition */
 
@@ -64,13 +64,13 @@
   gap: 1rem;
 
   span {
-    color: #133558;
+    color: #6b8ba2;
     font-weight: bold;
   }
 
   p {
     font-size: 1.3rem;
-    color: #133558;
+    color: #6b8ba2;
     opacity: 0.7;
   }
 }
@@ -91,7 +91,7 @@
 }
 
 .leftside h2 {
-  color: #133558;
+  color: #6b8ba2;
   font-size: 2rem;
   max-width: 70%;
 
@@ -102,7 +102,7 @@
 }
 
 .infoCard {
-  border-top: 1px solid #133558;
+  border-top: 1px solid #000000;
   padding-top: 1rem;
   display: flex;
   align-items: center;
@@ -117,7 +117,7 @@
   }
 
   p {
-    color: #133558;
+    color: #6b8ba2;
   }
 
   // &:hover {
@@ -172,7 +172,9 @@
       font-size: 20px; /* Ajustando o tamanho do texto dentro da bola */
     }
     &:hover {
-      transform: scale(1.05); /* Reduzindo o efeito de hover em telas pequenas */
+      transform: scale(
+        1.05
+      ); /* Reduzindo o efeito de hover em telas pequenas */
     }
   }
 
@@ -186,7 +188,7 @@
     span {
       font-size: 16px;
     }
-    
+
     p {
       font-size: 15px; /* Ajustando o tamanho do texto */
     }
@@ -205,7 +207,7 @@
       width: 25px; /* Ajustando o tamanho das imagens */
     }
     p {
-      font-size: 14px /* Ajustando o tamanho do texto */
+      font-size: 14px; /* Ajustando o tamanho do texto */
     }
   }
 
@@ -214,5 +216,3 @@
     gap: 2rem; /* Reduzindo o espaço entre os elementos */
   }
 }
-
-
