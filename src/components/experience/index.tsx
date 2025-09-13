@@ -189,7 +189,7 @@ export default function Experience({ language }: ExperienceProps) {
           </div>
           <div className={styles.infoCard}>
             <p>
-              <strong>25+</strong> {text.infoCard2}
+              <strong>27+</strong> {text.infoCard2}
             </p>
             <img src="/palm.svg" alt="Destinos exóticos" />
           </div>

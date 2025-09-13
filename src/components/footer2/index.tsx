@@ -7,7 +7,7 @@ export default function Footer2() {
         <div className={styles.content}>
           <div className={styles.top}>
             <div className={styles.left}>
-              <img src="/logo.svg" alt="" />
+              <img src="/" alt="" />
               <div className={styles.socials}>
                 <img src="/InstagramLogo.svg" alt="" />
                 <img src="/WhatsappLogo.svg" alt="" />
