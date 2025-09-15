@@ -9,78 +9,12 @@
   gap: 4rem;
   padding-inline: 8vw;
   padding-block: 5rem;
-  width: 100%;
-  height: 100%;
   max-width: 1440px;
   margin: 0 auto;
 }
 
 .topContent {
   display: flex;
-}
-
-.ball {
-  width: 100%;
-  max-width: 250px;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: #6b8ba2;
-  position: relative;
-  transition: transform 0.1s ease-out, box-shadow 0.3s ease; /* Added box-shadow transition */
-
-  h3 {
-    font-size: 5rem;
-    color: #fff;
-  }
-
-  span {
-    font-size: 2rem;
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: #fff;
-  }
-
-  .text {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  &:hover {
-    transform: scale(1.1); /* Enlarges the ball on hover */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
-  }
-}
-
-.experienceText {
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-
-  span {
-    color: #6b8ba2;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 1.3rem;
-    color: #6b8ba2;
-    opacity: 0.7;
-  }
-}
-
-.rightside {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 5rem;
 }
 
@@ -94,11 +28,50 @@
   color: #6b8ba2;
   font-size: 2rem;
   max-width: 70%;
-
   span {
     display: inline-block;
     will-change: transform, opacity;
   }
+}
+
+.rightside {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+/* Regras para o carrossel */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.carouselImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.activeImage {
+  opacity: 1;
+}
+
+.bottomcontent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
 }
 
 .infoCard {
@@ -109,110 +82,47 @@
   justify-content: space-between;
   gap: 3rem;
   width: 100%;
-  transition: box-shadow 0.3s ease; /* Added transition for box-shadow */
+  transition: box-shadow 0.3s ease;
   img {
     width: 30px;
     filter: invert(15%) sepia(10%) saturate(1000%) hue-rotate(180deg)
       brightness(70%) contrast(80%);
   }
-
   p {
     color: #6b8ba2;
   }
-
-  // &:hover {
-  //   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
-  // }
 }
 
-.bottomcontent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4rem;
-}
-
+/* Ajustes para mobile */
 @media screen and (max-width: 768px) {
-  .content {
-    padding-inline: 4vw; /* Reduzindo o padding lateral */
-    padding-block: 3rem;
-    gap: 2rem; /* Reduzindo o espaço entre os elementos */
-    align-items: center; /* Garantindo que os elementos estejam centralizados */
-    text-align: center;
-  }
-
   .topContent {
-    flex-direction: column; /* Empilhando os elementos */
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
   }
-
   .leftside {
-    flex-direction: column; /* Empilhar o texto e a bola verticalmente */
-    align-items: center;
+    max-width: 100%;
     text-align: center;
-    justify-content: center; /* Centralizar os elementos verticalmente */
-    gap: 1rem; /* Espaçamento entre o texto e a bola */
   }
-
   .leftside h2 {
-    font-size: 17px; /* Ajustando o tamanho da fonte */
-    max-width: 100%; /* Garantindo que o texto ocupe a largura disponível */
+    font-size: 1.5rem;
+    max-width: 100%;
   }
-
-  .ball {
-    max-width: 150px; /* Reduzindo o tamanho da bola */
-    display: flex;
-    margin-top: 2rem; /* Espaço entre o texto e a bola */
-    left: 113px;
-    h3 {
-      font-size: 42px; /* Reduzindo o tamanho da fonte da bola */
-    }
-    span {
-      font-size: 20px; /* Ajustando o tamanho do texto dentro da bola */
-    }
-    &:hover {
-      transform: scale(
-        1.05
-      ); /* Reduzindo o efeito de hover em telas pequenas */
-    }
-  }
-
-  .experienceText {
-    font-size: 1.2rem; /* Reduzindo o tamanho da fonte para o texto de experiência */
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-    margin-top: 1rem; /* Espaço entre a bola e o segundo texto */
-
-    span {
-      font-size: 16px;
-    }
-
-    p {
-      font-size: 15px; /* Ajustando o tamanho do texto */
-    }
-  }
-
   .rightside {
-    gap: 2rem;
-    display: block;
+    order: 1;
+    max-width: 100%;
   }
-
-  .infoCard {
-    flex-direction: column; /* Empilhando os elementos verticalmente */
-    gap: 1rem;
-    width: 100%;
-    img {
-      width: 25px; /* Ajustando o tamanho das imagens */
-    }
-    p {
-      font-size: 14px; /* Ajustando o tamanho do texto */
-    }
+  .carouselContainer {
+    max-width: 100%;
+    height: 200px;
   }
-
   .bottomcontent {
-    flex-direction: column; /* Empilhando os elementos */
-    gap: 2rem; /* Reduzindo o espaço entre os elementos */
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .infoCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #000000;
   }
 }

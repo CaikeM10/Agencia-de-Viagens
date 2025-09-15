@@ -25,7 +25,7 @@ interface CaseStudiesProps {
 // Criando o objeto de traduções
 const translations: Record<CaseStudiesProps["language"], Translations> = {
   pt: {
-    title: "Nossos Produtos",
+    title: "Nossos Serviços",
     categories: ["todos", "agência", "documentos", "cidadania"],
     caseStudies: [
       {
