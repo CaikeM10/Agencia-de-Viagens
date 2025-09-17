@@ -85,20 +85,32 @@
   background-size: cover;
   background-position: center;
   background-color: #6b8ba2;
-  animation: changeBackground 18s infinite;
+  animation: changeBackground 21s infinite;
 
   @keyframes changeBackground {
     0% {
-      background-image: url("/york.webp");
+      background-image: url("/bg1.webp");
     }
     33% {
       background-image: url("/maldives.webp");
     }
+    27% {
+      background-image: url("/suica.webp");
+    }
+    47% {
+      background-image: url("/travel1.jpg");
+    }
+    55% {
+      background-image: url("/images/brasil.jpg");
+    }
     66% {
       background-image: url("/japan.webp");
     }
+    77% {
+      background-image: url("/images/chile.jpg");
+    }
     100% {
-      background-image: url("/york.webp");
+      background-image: url("/bg1.webp");
     }
   }
 }

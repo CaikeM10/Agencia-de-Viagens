@@ -88,7 +88,7 @@ export default function Experience({ language }: ExperienceProps) {
         <div className={styles.bottomcontent}>
           <div className={styles.infoCard}>
             <p>
-              <strong>350+</strong> {text.infoCard1}
+              <strong>500+</strong> {text.infoCard1}
             </p>
             <img src="/happy.svg" alt="Clientes felizes" />
           </div>
