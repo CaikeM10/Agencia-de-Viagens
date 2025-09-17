@@ -107,9 +107,6 @@ export default function Footer({ language }: FooterProps) {
               </div>
             </div>
             <div className={styles.rightBottom}>
-              <Link href="https://seloresponsavel.turismo.gov.br/selo-turismo-responsavel/verificar-selo/56684836000107/286023">
-                <img src="/selada.png" alt="" className={styles.image} />
-              </Link>
               <Link href="https://www.reclameaqui.com.br/">
                 <img src="reclame.png" alt="reclame" />
               </Link>

@@ -11,9 +11,10 @@ export default function Experience({ language }: ExperienceProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const carouselImages = [
-    "/foto-1.jpg",
-    "/destinos/foto-2.jpg",
-    "/destinos/foto-3.jpg",
+    "/foto1.jpg",
+    "/foto2.jpg",
+    "/foto3.jpg",
+    "/visto.png",
   ];
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function Experience({ language }: ExperienceProps) {
   const translations = {
     pt: {
       header:
-        "Na EAI DESTINO, transformamos o desejo de viajar em experiências reais e inesquecíveis.",
+        "Na EAI DESTINO, transformamos o desejo de viajar em experiências reais e inesquecíveis. Nascemos com o propósito de facilitar o acesso a viagens bem planejadas, oferecendo soluções personalizadas.",
       infoCard1: "clientes satisfeitos em todo o mundo.",
       infoCard2: "destinos exóticos.",
       infoCard3: "pacotes personalizados.",
@@ -50,7 +51,7 @@ export default function Experience({ language }: ExperienceProps) {
     es: {
       header:
         "Somos una empresa comprometida a transformar tus viajes en experiencias increíbles",
-      infoCard1: "clientes satisfechos en todo el mundo.",
+      infoCard1: "clientes satisfechos en todo o mundo.",
       infoCard2: "destinos exóticos.",
       infoCard3: "paquetes personalizados.",
     },
@@ -64,8 +65,8 @@ export default function Experience({ language }: ExperienceProps) {
         <div className={styles.topContent}>
           <div className={styles.leftside}>
             <h2 ref={textRef}>
-              {text.header.split("").map((char, index) => (
-                <span key={index}>{char}</span>
+              {text.header.split(" ").map((word, index) => (
+                <span key={index}>{word} </span>
               ))}
             </h2>
           </div>
@@ -89,7 +90,7 @@ export default function Experience({ language }: ExperienceProps) {
             <p>
               <strong>350+</strong> {text.infoCard1}
             </p>
-            <img src="/foto1.jpg" alt="Clientes felizes" />
+            <img src="/happy.svg" alt="Clientes felizes" />
           </div>
           <div className={styles.infoCard}>
             <p>

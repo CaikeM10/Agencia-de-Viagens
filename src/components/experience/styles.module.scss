@@ -15,13 +15,15 @@
 
 .topContent {
   display: flex;
+  align-items: flex-start;
   gap: 5rem;
 }
 
 .leftside {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex: 1;
 }
 
 .leftside h2 {
@@ -29,21 +31,18 @@
   font-size: 2rem;
   max-width: 70%;
   span {
-    display: inline-block;
-    will-change: transform, opacity;
+    display: inline; /* <--- Esta é a correção! */
   }
 }
-
 .rightside {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  flex: 1;
 }
 
-/* Regras para o carrossel */
 .carouselContainer {
   position: relative;
   width: 100%;
@@ -93,10 +92,25 @@
   }
 }
 
-/* Ajustes para mobile */
+/* Animação do texto */
+.animatedWord {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealText 0.5s ease forwards;
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .topContent {
     flex-direction: column;
+    align-items: center;
   }
   .leftside {
     max-width: 100%;
