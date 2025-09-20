@@ -190,7 +190,7 @@ export default function Steps({ language }: StepsProps) {
               <div className={styles.leftside}>
                 <p>{step.number}</p>
                 <div className={styles.rowTitle}>
-                  <img src="/users.svg" alt="" />
+                  <img src="/users.svg" alt="Usúarios" />
                   <h3>{step.title}</h3>
                 </div>
               </div>

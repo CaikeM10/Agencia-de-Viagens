@@ -71,10 +71,10 @@ export default function Footer({ language }: FooterProps) {
             <img src="/logo redondo.png" alt="Logo E ai Destino" />
             <div className={styles.letters}>
               <Link href="https://www.instagram.com/eaidestino/">
-                <img src="/instagram.svg" alt="insta" />
+                <img src="/instagram.svg" alt="instagram" />
               </Link>
               <Link href="https://wa.me/5511967930315">
-                <img src="/whatsapp.svg" alt="whats" />
+                <img src="/whatsapp.svg" alt="whatsApp" />
               </Link>
             </div>
           </div>

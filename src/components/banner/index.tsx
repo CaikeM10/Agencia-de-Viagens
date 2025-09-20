@@ -7,8 +7,8 @@ const imagesToPreload = [
   "/images/brasil.jpg",
   "/bg1.webp",
   "/maldives.webp",
-  "/images/bali3.jpg",
   "/images/chile.jpg",
+  "/bg2.webp",
   "/japan.webp",
 ];
 

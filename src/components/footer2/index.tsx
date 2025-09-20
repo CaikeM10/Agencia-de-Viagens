@@ -9,18 +9,18 @@ export default function Footer2() {
             <div className={styles.left}>
               <img src="/" alt="" />
               <div className={styles.socials}>
-                <img src="/InstagramLogo.svg" alt="" />
-                <img src="/WhatsappLogo.svg" alt="" />
+                <img src="/InstagramLogo.svg" alt="Instagram" />
+                <img src="/WhatsappLogo.svg" alt="Instagram" />
               </div>
             </div>
             <div className={styles.middle}>
               <h1>Contato</h1>
               <div className={styles.row}>
-                <img src="/mapPin.svg" alt="" />
-                <p>Endereço: Rua exemplo, 1234</p>
+                <img src="/mapPin.svg" alt="Mapa" />
+                <p> São Paulo, SP</p>
               </div>
               <div className={styles.row}>
-                <img src="/phone.svg" alt="" />
+                <img src="/phone.svg" alt="Telefone" />
                 <p>+55 (11) 9967930315</p>
               </div>
             </div>
@@ -32,7 +32,7 @@ export default function Footer2() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <p>E ai Destino© 2025 - Todos os direitos reservados</p>
+          <p>E ai Destino © 2025 - Todos os direitos reservados.</p>
         </div>
       </div>
     </>

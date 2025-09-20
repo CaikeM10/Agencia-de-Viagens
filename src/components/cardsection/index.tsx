@@ -43,11 +43,11 @@ export default function CardSection() {
           </div>
           <div className={styles.rowWrap}>
             <div className={styles.row}>
-              <img src="/mapPin.svg" alt="" />
+              <img src="/mapPin.svg" alt="Mapa" />
               <p> São Paulo, SP</p>
             </div>
             <div className={styles.row}>
-              <img src="/phone.svg" alt="" />
+              <img src="/phone.svg" alt="Telefone" />
               <p>+55 (11) 967930315</p>
             </div>
           </div>

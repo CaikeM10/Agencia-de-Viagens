@@ -87,7 +87,7 @@
 
   &::before {
     content: url("/suica.webp") url("/images/brasil.jpg") url("/bg1.webp")
-      url("/maldives.webp") url("/images/bali3.jpg") url("/images/chile.jpg")
+      url("/maldives.webp") url("/images/chile.jpg") url("/bg2.webp")
       url("/japan.webp");
     display: none;
   }
@@ -119,16 +119,16 @@
     background-image: url("/maldives.webp");
   }
   61% {
-    background-image: url("/images/bali3.jpg");
+    background-image: url("/images/chile.jpg");
   }
   74% {
-    background-image: url("/images/bali3.jpg");
+    background-image: url("/images/chile.jpg");
   }
   76% {
-    background-image: url("/images/chile.jpg");
+    background-image: url("/bg2.webp");
   }
   89% {
-    background-image: url("/images/chile.jpg");
+    background-image: url("/bg2.webp");
   }
   91% {
     background-image: url("/japan.webp");

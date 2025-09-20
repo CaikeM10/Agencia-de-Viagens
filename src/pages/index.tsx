@@ -22,7 +22,6 @@ export default function Home() {
 
   const [language, setLanguage] = useState<Language>("pt");
 
-  //  tradução para as meta tags
   const translations = {
     pt: {
       title: "E AI DESTINO - Sua Agência de Viagens",
@@ -58,6 +57,16 @@ export default function Home() {
         <title>{text.title}</title>
         <meta name="description" content={text.description} />
 
+        {/* Adiciona a tag canonical, que evita conteúdo duplicado para SEO */}
+        <link rel="canonical" href="https://www.eaidestino.com.br" />
+
+        {/* Tags para favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
         {/* Tags para WhatsApp, Facebook, etc. (Open Graph) */}
         <meta property="og:title" content={text.title} />
         <meta property="og:description" content={text.description} />
@@ -71,8 +80,6 @@ export default function Home() {
         <meta name="twitter:description" content={text.description} />
         <meta name="twitter:image" content={text.previewImage} />
       </Head>
-      <ScrollProgressBar />
-      <Banner language={language} />
       <Header
         aboutUsRef={aboutUsRef}
         servicesRef={servicesRef}
@@ -80,21 +87,24 @@ export default function Home() {
         language={language}
         setLanguage={setLanguage}
       />
-      <div ref={aboutUsRef}>
-        <Experience language={language} />
-      </div>
-      <div>
-        <Steps language={language} />
-      </div>
-      <div ref={servicesRef}>
-        <CaseStudies language={language} />
-      </div>
-      <div>
-        <TravelShowcase language={language} />
-      </div>
-      <div ref={contactRef}>
-        <ScrollText language={language} />
-      </div>
+      <main>
+        <Banner language={language} />
+        <div ref={aboutUsRef}>
+          <Experience language={language} />
+        </div>
+        <div>
+          <Steps language={language} />
+        </div>
+        <div ref={servicesRef}>
+          <CaseStudies language={language} />
+        </div>
+        <div>
+          <TravelShowcase language={language} />
+        </div>
+        <div ref={contactRef}>
+          <ScrollText language={language} />
+        </div>
+      </main>
       <Footer language={language} />
     </>
   );

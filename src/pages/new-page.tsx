@@ -400,7 +400,7 @@ export default function NewPage() {
           className={styles.navButton}
           onClick={() => mainSwiperRef.current?.slidePrev()}
         >
-          <img src="/arrow-up.svg" alt="" />
+          <img src="/arrow-up.svg" alt="Seta" />
         </button>
         <div className={styles.slideInfo}>
           <h2>{slides[currentSlide].title}</h2>
@@ -410,7 +410,7 @@ export default function NewPage() {
           className={styles.navButton}
           onClick={() => mainSwiperRef.current?.slideNext()}
         >
-          <img src="/arrow-down.svg" alt="" />
+          <img src="/arrow-down.svg" alt="Seta" />
         </button>
       </div>
 

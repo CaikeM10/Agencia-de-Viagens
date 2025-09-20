@@ -7,7 +7,7 @@ export default function ServiceBenefits() {
         <h2>Por Que Escolher Nossa Agência?</h2>
         <div className={styles.row}>
           <div className={styles.card}>
-            <img src="/pencil.svg" alt="" />
+            <img src="/pencil.svg" alt="Pincel" />
             <h3>Personalização</h3>
             <h5>
               Serviços moldados às <br />
@@ -16,7 +16,7 @@ export default function ServiceBenefits() {
             </h5>
           </div>
           <div className={styles.card}>
-            <img src="/star.svg" alt="" />
+            <img src="/star.svg" alt="Estrela" />
             <h3>Experiência</h3>
             <h5>
               Equipe composta por <br />
@@ -25,7 +25,7 @@ export default function ServiceBenefits() {
             </h5>
           </div>
           <div className={styles.card}>
-            <img src="/rewind.svg" alt="" />
+            <img src="/rewind.svg" alt="Tempo" />
             <h3>Suporte Contínuo</h3>
             <h5>
               Assistência antes,
