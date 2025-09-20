@@ -32,7 +32,7 @@ export default function Footer2() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <p>Eai Destino© 2025 - Todos os direitos reservados</p>
+          <p>E ai Destino© 2025 - Todos os direitos reservados</p>
         </div>
       </div>
     </>

@@ -1,14 +1,36 @@
+import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 
+// URLs das imagens para o pré-carregamento
+const imagesToPreload = [
+  "/suica.webp",
+  "/images/brasil.jpg",
+  "/bg1.webp",
+  "/maldives.webp",
+  "/images/bali3.jpg",
+  "/images/chile.jpg",
+  "/japan.webp",
+];
+
+const preloadImages = (urls: string[]) => {
+  urls.forEach((url) => {
+    const img = new Image();
+    img.src = url;
+  });
+};
+
 interface BannerProps {
-  language: "pt" | "en" | "fr" | "es"; // Adiciona a prop de idioma
+  language: "pt" | "en" | "fr" | "es";
 }
 
 export default function Banner({ language }: BannerProps) {
-  // Textos traduzidos
+  useEffect(() => {
+    preloadImages(imagesToPreload);
+  }, []);
+
   const translations = {
     pt: {
-      title1: "EAI",
+      title1: "E AI",
       title2: "DESTINO",
       description: "Somos a melhor agência de viagem com o preço mais justo!",
       buttonText: "Saiba mais!",
@@ -17,7 +39,7 @@ export default function Banner({ language }: BannerProps) {
         "Entre em contato conosco, faça um orçamento agora mesmo!",
     },
     en: {
-      title1: "EAI",
+      title1: "E AI",
       title2: "DESTINATION",
       description: "We are the largest travel agency with the best prices!",
       buttonText: "Learn more!",
@@ -25,7 +47,7 @@ export default function Banner({ language }: BannerProps) {
       rightBoxDescription: "Contact us for a quote!",
     },
     fr: {
-      title1: "EAI",
+      title1: "E AI",
       title2: "DESTINATION",
       description:
         "Nous sommes la plus grande agence de voyage avec les meilleurs prix!",
@@ -34,7 +56,7 @@ export default function Banner({ language }: BannerProps) {
       rightBoxDescription: "Contactez-nous pour un devis!",
     },
     es: {
-      title1: "EAI",
+      title1: "E AI",
       title2: "DESTINO",
       description:
         "¡Somos la agencia de viajes más grande con los mejores precios!",
@@ -44,7 +66,6 @@ export default function Banner({ language }: BannerProps) {
     },
   };
 
-  // Seleciona o texto de acordo com o idioma
   const text = translations[language];
 
   return (
@@ -56,20 +77,7 @@ export default function Banner({ language }: BannerProps) {
               <h1>{text.title1}</h1>
               <h2>{text.title2}</h2>
               <div className={styles.description}>
-                <p>
-                  {text.description.split("").map((char, index) => (
-                    <span
-                      key={index}
-                      style={{
-                        animationDelay: `${index * 0.05}s`,
-                        display: char === " " ? "inline-block" : "inline",
-                        width: char === " " ? "0.25em" : "auto",
-                      }}
-                    >
-                      {char}
-                    </span>
-                  ))}
-                </p>
+                <p>{text.description}</p>
                 <button
                   onClick={() =>
                     window.open("https://wa.me/5511967930315", "_blank")

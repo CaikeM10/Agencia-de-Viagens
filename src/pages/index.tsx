@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Banner from "@/components/banner";
 import Experience from "@/components/experience";
 import Footer from "@/components/footer";
@@ -21,8 +22,55 @@ export default function Home() {
 
   const [language, setLanguage] = useState<Language>("pt");
 
+  // Adicione um objeto de tradução para as meta tags
+  const translations = {
+    pt: {
+      title: "EAI DESTINO - Sua Agência de Viagens",
+      description:
+        "A melhor agência de viagens com os melhores preços. Planeje sua próxima aventura conosco!",
+      previewImage: "https://wwW.eaidestino.com.br/",
+    },
+    en: {
+      title: "EAI DESTINO - Your Travel Agency",
+      description:
+        "The best travel agency with the best prices. Plan your next adventure with us!",
+      previewImage: "https://www.eaidestino.com.br/imagem-preview-en.jpg",
+    },
+    fr: {
+      title: "EAI DESTINO - Votre Agence de Voyages",
+      description:
+        "La meilleure agence de voyage avec les meilleurs prix. Planifiez votre prochaine aventure avec nous !",
+      previewImage: "https://www.eaidestino.com.br/imagem-preview-fr.jpg",
+    },
+    es: {
+      title: "EAI DESTINO - Tu Agencia de Viajes",
+      description:
+        "La mejor agencia de viajes con los mejores precios. ¡Planifica tu próxima aventura con nosotros!",
+      previewImage: "https://www.eaidestino.com.br/imagem-preview-es.jpg",
+    },
+  };
+
+  const text = translations[language];
+
   return (
     <>
+      <Head>
+        <title>{text.title}</title>
+        <meta name="description" content={text.description} />
+
+        {/* Tags para WhatsApp, Facebook, etc. (Open Graph) */}
+        <meta property="og:title" content={text.title} />
+        <meta property="og:description" content={text.description} />
+        <meta property="og:image" content={text.previewImage} />
+        <meta property="og:url" content="https://www.eaidestino.com.br" />
+        <meta property="og:type" content="website" />
+
+        {/* Tags para o Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={text.title} />
+        <meta name="twitter:description" content={text.description} />
+        <meta name="twitter:image" content={text.previewImage} />
+      </Head>
       <ScrollProgressBar />
       <Banner language={language} />
       <Header

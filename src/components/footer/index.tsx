@@ -14,7 +14,7 @@ const translations = {
     remoteService: "Atendimento remoto",
     subscribeTitle: "INSCREVA-SE PARA RECEBER NOVIDADES",
     privacy: "Garantimos a proteção da sua privacidade",
-    footerText: "© 2025 Eai Destino desenvolvido por Caike Marinho.",
+    footerText: "© 2025 E ai Destino desenvolvido por Caike Marinho.",
     privacyPolicy: "Política de Privacidade",
     termsConditions: "Termos e Condições",
     copyrights: "Direitos Autorais",
@@ -27,7 +27,7 @@ const translations = {
     remoteService: "Remote service",
     subscribeTitle: "SUBSCRIBE TO RECEIVE UPDATES",
     privacy: "We guarantee the protection of your privacy",
-    footerText: "© 2025 Eai Destino developed by Caike Marinho.",
+    footerText: "© 2025 E ai Destino developed by Caike Marinho.",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms and Conditions",
     copyrights: "Copyright",
@@ -40,7 +40,7 @@ const translations = {
     remoteService: "Service à distance",
     subscribeTitle: "INSCRIVEZ-VOUS POUR RECEVOIR LES NOUVELLES",
     privacy: "Nous garantissons la protection de votre vie privée",
-    footerText: "© 2025 Eai Destino développé par Caike Marinho.",
+    footerText: "© 2025 E ai Destino développé par Caike Marinho.",
     privacyPolicy: "Politique de Confidentialité",
     termsConditions: "Termes et Conditions",
     copyrights: "Droits d'Auteur",
@@ -53,7 +53,7 @@ const translations = {
     remoteService: "Atención remota",
     subscribeTitle: "SUSCRÍBETE PARA RECIBIR NOVEDADES",
     privacy: "Garantizamos la protección de tu privacidad",
-    footerText: "© 2025 Eai Destino desarrollado por Caike Marinho.",
+    footerText: "© 2025 E ai Destino desarrollado por Caike Marinho.",
     privacyPolicy: "Política de Privacidad",
     termsConditions: "Términos y Condiciones",
     copyrights: "Derechos de Autor",
@@ -68,7 +68,7 @@ export default function Footer({ language }: FooterProps) {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.leftside}>
-            <img src="/logo redondo.png" alt="Logo Eai Destino" />
+            <img src="/logo redondo.png" alt="Logo E ai Destino" />
             <div className={styles.letters}>
               <Link href="https://www.instagram.com/eaidestino/">
                 <img src="/instagram.svg" alt="insta" />

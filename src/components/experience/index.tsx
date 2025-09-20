@@ -29,7 +29,7 @@ export default function Experience({ language }: ExperienceProps) {
   const translations = {
     pt: {
       header:
-        "Na EAI DESTINO, transformamos o desejo de viajar em experiências reais e inesquecíveis. Nascemos com o propósito de facilitar o acesso a viagens bem planejadas, oferecendo soluções personalizadas.",
+        "Na E AI DESTINO, transformamos o desejo de viajar em experiências reais e inesquecíveis. Nascemos com o propósito de facilitar o acesso a viagens bem planejadas, oferecendo soluções personalizadas.",
       infoCard1: "clientes satisfeitos em todo o mundo.",
       infoCard2: "destinos exóticos.",
       infoCard3: "pacotes personalizados.",
