@@ -22,31 +22,31 @@ export default function Home() {
 
   const [language, setLanguage] = useState<Language>("pt");
 
-  // Adicione um objeto de tradução para as meta tags
+  //  tradução para as meta tags
   const translations = {
     pt: {
-      title: "EAI DESTINO - Sua Agência de Viagens",
+      title: "E AI DESTINO - Sua Agência de Viagens",
       description:
         "A melhor agência de viagens com os melhores preços. Planeje sua próxima aventura conosco!",
-      previewImage: "https://wwW.eaidestino.com.br/",
+      previewImage: "https://wwW.eaidestino.com.br/graph-pt.jpg",
     },
     en: {
-      title: "EAI DESTINO - Your Travel Agency",
+      title: "E AI DESTINO - Your Travel Agency",
       description:
         "The best travel agency with the best prices. Plan your next adventure with us!",
-      previewImage: "https://www.eaidestino.com.br/imagem-preview-en.jpg",
+      previewImage: "https://www.eaidestino.com.br/graph-en.jpg",
     },
     fr: {
-      title: "EAI DESTINO - Votre Agence de Voyages",
+      title: "E AI DESTINO - Votre Agence de Voyages",
       description:
         "La meilleure agence de voyage avec les meilleurs prix. Planifiez votre prochaine aventure avec nous !",
-      previewImage: "https://www.eaidestino.com.br/imagem-preview-fr.jpg",
+      previewImage: "https://www.eaidestino.com.br/graph-fr.jpg",
     },
     es: {
-      title: "EAI DESTINO - Tu Agencia de Viajes",
+      title: "E AI DESTINO - Tu Agencia de Viajes",
       description:
         "La mejor agencia de viajes con los mejores precios. ¡Planifica tu próxima aventura con nosotros!",
-      previewImage: "https://www.eaidestino.com.br/imagem-preview-es.jpg",
+      previewImage: "https://www.eaidestino.com.br/graph-es.jpg",
     },
   };
 
