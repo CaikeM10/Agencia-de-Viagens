@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 // URLs das imagens para o pré-carregamento
 const imagesToPreload = [
@@ -14,7 +15,7 @@ const imagesToPreload = [
 
 const preloadImages = (urls: string[]) => {
   urls.forEach((url) => {
-    const img = new Image();
+    const img = new window.Image();
     img.src = url;
   });
 };
@@ -24,9 +25,20 @@ interface BannerProps {
 }
 
 export default function Banner({ language }: BannerProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   useEffect(() => {
     preloadImages(imagesToPreload);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % imagesToPreload.length
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [imagesToPreload.length]);
 
   const translations = {
     pt: {
@@ -95,6 +107,19 @@ export default function Banner({ language }: BannerProps) {
           </div>
         </div>
         <div className={styles.rightside}>
+          {/* Altere o código do carrossel para usar o componente Image */}
+          {imagesToPreload.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              alt={`Imagem de fundo ${index}`}
+              layout="fill"
+              objectFit="cover"
+              className={`${styles.rightsideImage} ${
+                index === currentImageIndex ? styles.activeImage : ""
+              }`}
+            />
+          ))}
           <div className={styles.rightBox}>
             <img src="/arrow.svg" alt="Arrow" />
             <h2>{text.rightBoxTitle}</h2>
