@@ -1,10 +1,17 @@
 import styles from "./styles.module.scss";
+import Image from "next/image"; // Importa o componente Image
 
 export default function CardSection() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <img src="/background.svg" alt="" className={styles.background} />
+        <Image
+          src="/background.svg"
+          alt=""
+          className={styles.background}
+          width={1920}
+          height={1080}
+        />
         <div className={styles.leftside}>
           <div className={styles.form}>
             <div className={styles.inputWrap}>
@@ -19,7 +26,6 @@ export default function CardSection() {
               <p>Telefone</p>
               <input type="text" placeholder="Telefone" />
             </div>
-
             <div className={styles.inputWrap}>
               <p>Mensagem</p>
               <textarea
@@ -29,7 +35,8 @@ export default function CardSection() {
               ></textarea>
             </div>
             <button>
-              Entre em contato <img src="/arrow-right.svg" alt="" />
+              Entre em contato{" "}
+              <Image src="/arrow-right.svg" alt="" width={20} height={20} />
             </button>
           </div>
         </div>
@@ -43,11 +50,11 @@ export default function CardSection() {
           </div>
           <div className={styles.rowWrap}>
             <div className={styles.row}>
-              <img src="/mapPin.svg" alt="Mapa" />
+              <Image src="/mapPin.svg" alt="Mapa" width={24} height={24} />
               <p> São Paulo, SP</p>
             </div>
             <div className={styles.row}>
-              <img src="/phone.svg" alt="Telefone" />
+              <Image src="/phone.svg" alt="Telefone" width={24} height={24} />
               <p>+55 (11) 967930315</p>
             </div>
           </div>
