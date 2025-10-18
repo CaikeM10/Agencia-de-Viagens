@@ -1,0 +1,187 @@
+// Variáveis de Cores (Ajuste para as cores da sua marca)
+$primary-brand-color: #f7941d; // Laranja ou cor de destaque
+$text-dark: #333333;
+$text-light: #666666;
+$background-light: #f9f9f9;
+$border-color: #eeeeee;
+$desktop-offset: 100px;
+
+.container {
+  padding: 80px 20px;
+  background-color: $background-light;
+  text-align: center;
+}
+
+.title {
+  color: $text-dark;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+// --- Credibilidade Google ---
+.googleCredibility {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.ratingInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid $border-color;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  // Estilo para o logo do Google, se necessário
+  img {
+    margin-right: 5px;
+  }
+}
+
+.ratingValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $text-dark;
+}
+
+.starIcons {
+  display: flex;
+  color: gold; // Cor padrão das estrelas do Google
+  font-size: 1.2rem;
+  margin-top: -3px; // Ajuste fino
+}
+
+.reviewCount {
+  font-size: 0.9rem;
+  color: $text-light;
+}
+
+// --- Wrapper e Cards ---
+
+// Estrutura para Carrossel (ajuste se usar um pacote como Swiper)
+.reviewsCarouselWrapper {
+  overflow-x: auto; /* Permite rolagem horizontal */
+  padding-bottom: 20px; /* Espaço para a barra de rolagem */
+}
+
+.reviewsWrapper {
+  display: flex;
+  gap: 30px;
+  padding: 10px 0;
+
+  // Força o wrapper a ser largo o suficiente para a rolagem horizontal
+  width: max-content;
+}
+
+.reviewCard {
+  position: relative;
+  flex: 0 0 300px; // Largura fixa para cada card em carrossel
+  max-width: 350px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-height: 380px; // Altura mínima para uniformidade
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 4rem;
+  color: $primary-brand-color;
+  line-height: 1;
+  opacity: 0.1;
+  user-select: none;
+}
+
+.reviewText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $text-dark;
+  margin-bottom: 25px;
+  // CHAVE para leitura: evita justificado e melhora o espaçamento
+  text-align: left;
+}
+
+.reviewerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto; // Empurra a info do revisor para o final do card
+}
+
+.reviewerPhotoContainer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  // Garante que o Next/Image seja circular
+  .reviewerPhoto {
+    object-fit: cover;
+  }
+}
+
+.reviewerName {
+  font-size: 1.1rem;
+  font-weight: 700; // Negrito para hierarquia
+  color: $text-dark;
+  margin: 0;
+}
+
+.source {
+  font-size: 0.85rem;
+  color: $text-light;
+  margin-top: 2px;
+}
+
+// --- CTA Button ---
+.ctaButton {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 30px;
+  background-color: $primary-brand-color;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-brand-color, 10%);
+  }
+}
+
+// --- Responsividade (Para telas menores) ---
+@media (max-width: 1200px) {
+  .reviewCard {
+    flex: 0 0 320px; // Ajusta a largura do card em telas médias
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+  .reviewCard {
+    flex: 0 0 85vw; // Ocupa 85% da largura da tela em celular
+    min-height: 320px;
+  }
+  .reviewsWrapper {
+    justify-content: flex-start; // Alinha os cards para a rolagem no celular
+    padding: 0 10px; // Pequeno padding horizontal
+  }
+}

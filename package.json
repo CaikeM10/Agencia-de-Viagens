@@ -10,15 +10,17 @@
   },
   "dependencies": {
     "@cycjimmy/swiper-animation": "^6.0.3",
+    "@types/nodemailer": "^7.0.1",
     "gsap": "^3.12.5",
     "i18next": "^23.15.1",
     "next": "14.2.7",
     "next-i18next": "^15.3.1",
+    "nodemailer": "^7.0.6",
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^15.0.2",
     "sass": "^1.77.8",
-    "swiper": "^11.1.15"
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@types/node": "^20",

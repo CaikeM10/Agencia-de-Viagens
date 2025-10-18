@@ -29,8 +29,7 @@
 .leftside h2 {
   color: #6b8ba2;
   font-size: 2rem;
-  max-width: 70%;
-  // AQUI ESTÁ A CORREÇÃO:
+  max-width: 550px;
   text-align: left;
   span {
     display: inline;
@@ -117,15 +116,22 @@
   }
   .leftside {
     max-width: 100%;
-    text-align: center;
+
+    text-align: left;
+
+    padding-inline: 5vw;
   }
   .leftside h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Fonte ligeiramente reduzida */
+    line-height: 1.5; /* Aumentado o espaçamento entre linhas */
     max-width: 100%;
+    text-align: left; /* Garante alinhamento à esquerda */
   }
   .rightside {
     order: 1;
     max-width: 100%;
+    /* Adicionado padding para que a imagem não encoste nas laterais */
+    padding-inline: 5vw;
   }
   .carouselContainer {
     max-width: 100%;

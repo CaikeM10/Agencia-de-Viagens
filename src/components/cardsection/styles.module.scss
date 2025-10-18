@@ -17,6 +17,9 @@
     top: 0;
     left: 0;
   }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 .leftside,
 .rightside {
@@ -30,7 +33,7 @@
   max-width: 449px;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid 1 #6b8ba2;
+  border: 1px solid #6b8ba2; /* ERRO CORRIGIDO AQUI */
   background-color: #fff;
   padding: 30px;
   display: flex;
@@ -65,6 +68,7 @@
     border-radius: 10px;
     padding: 10px 15px;
     background: #fff;
+    color: #000; /* texto digitado fique visível, esse erro aconteceu no outro formulário também! */
   }
   p {
     color: #da8a67;
@@ -78,6 +82,7 @@
     border-radius: 10px;
     padding: 10px 15px;
     background: #fff;
+    color: #000; /* Garante que o texto digitado seja visível */
   }
 }
 .leftside {

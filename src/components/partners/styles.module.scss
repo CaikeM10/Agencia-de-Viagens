@@ -1,0 +1,89 @@
+$primary-color: #da8a67;
+$text-color: #ffffff;
+$bg-color: #6a8c9d;
+
+.container {
+  padding: 80px 20px;
+  background-color: $bg-color; // Fundo azul/cinza
+  text-align: center;
+}
+
+.title {
+  color: $primary-color; // Título em cor de destaque
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logosWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 41px; // Espaço entre os parceiros
+  flex-wrap: wrap; // Garante responsividade em telas menores
+}
+
+.partnerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px; // Garante que cada item tenha espaço
+}
+
+// Estilo para o contêiner que fará o círculo (NOVO)
+.logoContainer {
+  position: relative;
+  width: 100px; // Largura do círculo
+  height: 100px; // Altura do círculo (deve ser igual à largura)
+  border-radius: 50%; // CHAVE para o formato redondo
+  overflow: hidden; // Esconde partes da imagem que ultrapassarem o círculo
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #ffffff; // Fundo branco dentro do círculo para logos coloridas
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra sutil para destaque
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05); // Efeito hover para UX
+  }
+}
+
+// Estilo para a imagem dentro do contêiner
+.partnerLogo {
+  // Garante que a imagem preencha o círculo sem deformar
+  width: 100%;
+  height: 100%;
+  object-fit: contain; // Ajusta a imagem dentro do contêiner
+  padding: 10px; // Pequeno padding para evitar que logos batam na borda
+
+  // Se você usou fill={true} no Next/Image:
+  // position: absolute;
+}
+
+// Estilo para o nome do parceiro (Melhorando Visibilidade)
+.partnerName {
+  color: $text-color; // Cor branca, alto contraste com o fundo
+  font-size: 1rem; // Tamanho um pouco maior
+  font-weight: 600; // Negrito para visibilidade
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Media Query para responsividade em telas pequenas
+@media (max-width: 600px) {
+  .logosWrapper {
+    gap: 30px 20px;
+  }
+  .logoContainer {
+    width: 80px;
+    height: 80px;
+  }
+  .partnerName {
+    font-size: 0.9rem;
+  }
+}

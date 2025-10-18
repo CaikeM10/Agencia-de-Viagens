@@ -74,7 +74,7 @@ export default function Header({
     fr: {
       aboutUs: "À propos",
       services: "Services",
-      contact: "Contact",
+      contact: "contact",
       message: "Envoyer un message",
     },
     es: {

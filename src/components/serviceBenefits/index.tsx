@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 export default function ServiceBenefits() {
   return (
@@ -7,7 +8,7 @@ export default function ServiceBenefits() {
         <h2>Por Que Escolher Nossa Agência?</h2>
         <div className={styles.row}>
           <div className={styles.card}>
-            <img src="/pencil.svg" alt="Pincel" />
+            <Image src="/pencil.svg" alt="Pincel" width={32} height={32} />
             <h3>Personalização</h3>
             <h5>
               Serviços moldados às <br />
@@ -16,7 +17,7 @@ export default function ServiceBenefits() {
             </h5>
           </div>
           <div className={styles.card}>
-            <img src="/star.svg" alt="Estrela" />
+            <Image src="/star.svg" alt="Estrela" width={32} height={32} />
             <h3>Experiência</h3>
             <h5>
               Equipe composta por <br />
@@ -25,7 +26,7 @@ export default function ServiceBenefits() {
             </h5>
           </div>
           <div className={styles.card}>
-            <img src="/rewind.svg" alt="Tempo" />
+            <Image src="/rewind.svg" alt="Tempo" width={32} height={32} />
             <h3>Suporte Contínuo</h3>
             <h5>
               Assistência antes,
@@ -33,7 +34,11 @@ export default function ServiceBenefits() {
             </h5>
           </div>
         </div>
-        <button>Saiba Mais</button>
+        <button
+          onClick={() => window.open("https://wa.me/5511967930315", "_blank")}
+        >
+          Saiba Mais
+        </button>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
+import React, { forwardRef } from "react"; // Importa forwardRef
 import Link from "next/link";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 interface FooterProps {
-  language: "pt" | "en" | "fr" | "es"; // Adiciona a prop de idioma
+  language: "pt" | "en" | "fr" | "es";
 }
 
 const translations = {
@@ -14,7 +16,8 @@ const translations = {
     remoteService: "Atendimento remoto",
     subscribeTitle: "INSCREVA-SE PARA RECEBER NOVIDADES",
     privacy: "Garantimos a proteção da sua privacidade",
-    footerText: "© 2025 E ai Destino desenvolvido por Caike Marinho.",
+    footerText:
+      "© 2025 E ai Destino. Todos os Direitos Reservados. |BR| Desenvolvido por Caike Marinho | Soluções Web.",
     privacyPolicy: "Política de Privacidade",
     termsConditions: "Termos e Condições",
     copyrights: "Direitos Autorais",
@@ -60,25 +63,42 @@ const translations = {
   },
 };
 
-export default function Footer({ language }: FooterProps) {
-  const text = translations[language]; // Seleciona o idioma com base na prop
+// 1. O componente é envolvido por forwardRef.
+// 2. Ele recebe as props e a 'ref' como segundo argumento.
+const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
+  const text = translations[language];
 
   return (
-    <footer className={styles.container}>
+    // 3. A 'ref' é aplicada no elemento DOM raiz (<footer>)
+    <footer ref={ref as React.Ref<HTMLElement>} className={styles.container}>
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.leftside}>
-            <img src="/logo redondo.png" alt="Logo E ai Destino" />
+            <Image
+              src="/logo redondo.png"
+              alt="Logo E ai Destino"
+              width={155}
+              height={155}
+            />
             <div className={styles.letters}>
               <Link href="https://www.instagram.com/eaidestino/">
-                <img src="/instagram.svg" alt="instagram" />
+                <Image
+                  src="/instagram.svg"
+                  alt="instagram"
+                  width={40}
+                  height={40}
+                />
               </Link>
               <Link href="https://wa.me/5511967930315">
-                <img src="/whatsapp.svg" alt="whatsApp" />
+                <Image
+                  src="/whatsapp.svg"
+                  alt="whatsApp"
+                  width={40}
+                  height={40}
+                />
               </Link>
             </div>
           </div>
-
           <div className={styles.middle}>
             <div className={styles.box2}>
               <h5>{text.serviceQuestions}</h5>
@@ -93,33 +113,67 @@ export default function Footer({ language }: FooterProps) {
               <h4>contato +55 (11) 967930315</h4>
             </div>
           </div>
-
           <div className={styles.rightside}>
             <div className={styles.rightTop}>
               <h2>{text.subscribeTitle}</h2>
-              <div className={styles.inputContainer}>
-                <input type="email" placeholder="Digite seu email..." />
-                <img src="/mail.svg" alt="Ícone de email" />
-              </div>
+              <form action="/api/contact" method="POST">
+                <div className={styles.inputContainer}>
+                  <input
+                    type="email"
+                    placeholder="Digite seu email..."
+                    name="email"
+                  />
+                  <button type="submit">
+                    <Image
+                      src="/mail.svg"
+                      alt="Ícone de email"
+                      width={30}
+                      height={30}
+                    />
+                  </button>
+                </div>
+              </form>
               <div className={styles.privacy}>
-                <img src="/hand.svg" alt="Ícone de privacidade" />
+                <Image
+                  src="/hand.svg"
+                  alt="Ícone de privacidade"
+                  width={20}
+                  height={20}
+                />
                 <p>{text.privacy}</p>
               </div>
             </div>
             <div className={styles.rightBottom}>
               <Link href="https://www.reclameaqui.com.br/">
-                <img src="reclame.png" alt="reclame" />
+                <Image
+                  src="/reclame.png"
+                  alt="reclame"
+                  width={100}
+                  height={100}
+                />
               </Link>
               <Link href="https://cadastur.turismo.gov.br/cadastur/#!/public/qrcode/54299788000108">
-                <img src="cadastur.png" alt="cadastur" />
+                <Image
+                  src="/cadastur.png"
+                  alt="cadastur"
+                  width={100}
+                  height={100}
+                />
               </Link>
             </div>
           </div>
         </div>
-
         <div className={styles.bottom}>
           <div className={styles.leftBottom}>
-            <p>{text.footerText}</p>
+            <p>
+              {/* Substitui o separador |BR| pela tag <br /> */}
+              {text.footerText.split("|BR|").map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  {index < text.footerText.split("|BR|").length - 1 && <br />}
+                </React.Fragment>
+              ))}
+            </p>
           </div>
           <div className={styles.rightBottom}>
             <p>{text.privacyPolicy}</p>
@@ -130,4 +184,9 @@ export default function Footer({ language }: FooterProps) {
       </div>
     </footer>
   );
-}
+});
+
+// Define o nome de exibição do componente para melhor depuração
+Footer.displayName = "Footer";
+
+export default Footer;

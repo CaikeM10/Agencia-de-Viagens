@@ -4,10 +4,13 @@ import Experience from "@/components/experience";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import CaseStudies from "@/components/products";
-import ScrollProgressBar from "@/components/scrollBar";
+//import ScrollProgressBar from "@/components/scrollBar";
 import ScrollText from "@/components/scrollText";
 import Steps from "@/components/steps";
 import TravelShowcase from "@/components/travelshowcase";
+import GoogleReviews from "@/components/googlereviews";
+import Partners from "@/components/partners";
+
 import { Inter } from "next/font/google";
 import { useRef, useState } from "react";
 
@@ -24,9 +27,9 @@ export default function Home() {
 
   const translations = {
     pt: {
-      title: "E AI DESTINO - Sua Agência de Viagens",
+      title: "E ai Destino | Sua Agência de Viagens",
       description:
-        "A melhor agência de viagens com os melhores preços. Planeje sua próxima aventura conosco!",
+        " E ai, qual será o seu próximo detino ? A melhor agência de viagens com os melhores preços. Planeje sua próxima aventura conosco!",
       previewImage: "https://wwW.eaidestino.com.br/graph-pt.jpg",
     },
     en: {
@@ -104,8 +107,11 @@ export default function Home() {
         <div ref={contactRef}>
           <ScrollText language={language} />
         </div>
+        <GoogleReviews language={language} />
+        {/* NOVO: Componente Partners adicionado abaixo de GoogleReviews */}
+        <Partners language={language} />
       </main>
-      <Footer language={language} />
+      <Footer ref={contactRef} language={language} />
     </>
   );
 }

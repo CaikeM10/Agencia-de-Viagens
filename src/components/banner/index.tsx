@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
+import { titleFont } from "../../fonts";
 
 // URLs das imagens para o pré-carregamento
 const imagesToPreload = [
@@ -44,7 +45,7 @@ export default function Banner({ language }: BannerProps) {
     pt: {
       title1: "E AI",
       title2: "DESTINO",
-      description: "Somos a melhor agência de viagem com o preço mais justo!",
+      description: "E aí, qual será o seu próximo destino?  😎",
       buttonText: "Saiba mais!",
       rightBoxTitle: "Conheça lugares incríveis!",
       rightBoxDescription:
@@ -53,19 +54,18 @@ export default function Banner({ language }: BannerProps) {
     en: {
       title1: "E AI",
       title2: "DESTINATION",
-      description: "We are the largest travel agency with the best prices!",
+      description: "So, what will be your next destination? 😎",
       buttonText: "Learn more!",
       rightBoxTitle: "Discover amazing places!",
-      rightBoxDescription: "Contact us for a quote!",
+      rightBoxDescription: "Contact us, get a quote right now!",
     },
     fr: {
       title1: "E AI",
       title2: "DESTINATION",
-      description:
-        "Nous sommes la plus grande agence de voyage avec les meilleurs prix!",
+      description: "Alors, quelle sera votre prochaine destination ? 😎",
       buttonText: "En savoir plus!",
       rightBoxTitle: "Découvrez des lieux incroyables!",
-      rightBoxDescription: "Contactez-nous pour un devis!",
+      rightBoxDescription: "Contactez-nous, obtenez un devis dès maintenant ! ",
     },
     es: {
       title1: "E AI",
@@ -89,15 +89,17 @@ export default function Banner({ language }: BannerProps) {
               <h1>{text.title1}</h1>
               <h2>{text.title2}</h2>
               <div className={styles.description}>
-                <p>{text.description}</p>
+                <p className={titleFont.className}>{text.description}</p>{" "}
+                {/** aqui gera a importação da FONTE */}
                 <button
                   onClick={() =>
                     window.open("https://wa.me/5511967930315", "_blank")
                   }
                 >
+                  {/** button svg avião */}
                   <img
-                    src="/button.svg"
-                    alt="ButtonArrow"
+                    src="/plane.svg"
+                    alt="Icone de Avião"
                     className={styles.arrow}
                   />
                   {text.buttonText}
@@ -107,7 +109,6 @@ export default function Banner({ language }: BannerProps) {
           </div>
         </div>
         <div className={styles.rightside}>
-          {/* Altere o código do carrossel para usar o componente Image */}
           {imagesToPreload.map((image, index) => (
             <Image
               key={index}

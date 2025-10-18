@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  margin-top: -1px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +24,7 @@
   justify-content: center;
   align-items: center;
   background-color: #6b8ba2;
+  margin-top: -1px !important;
 }
 
 .leftLines {
@@ -128,24 +130,56 @@
 }
 
 .description {
-  margin-top: 10%;
+  margin-top: 12%;
   width: fit-content;
+
   button {
     cursor: pointer;
     background: none;
-    border: none;
+    /* Define uma borda inicial, essencial para o efeito de inversão */
+    border: 2px solid #da8a67;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+
+    /* Aumentei o GAP para dar espaço para o avião */
+    gap: 1.5rem;
+
+    /* Define a cor padrão do texto e do avião */
     color: #da8a67;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 10%;
+    margin-top: 12%;
+
+    /* Otimizações para o efeito de voo */
+    position: relative; /* Pai do avião, essencial para posicionamento absoluto */
+    overflow: hidden; /* Garante que o avião não 'corte' a borda durante o voo */
+    padding-left: 70px; /* Cria espaço extra para o avião dentro do botão */
+    transition: all 0.4s ease-in-out;
+    border-radius: 7px; /* Adicionado um border-radius para visual mais moderno */
+
     .arrow {
-      width: 60px;
+      /* ESTADO INICIAL DO AVIÃO */
+      width: 33px; /* Tamanho ajustado */
+      position: absolute;
+      left: 12px; /* Posição inicial do avião */
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Suaviza a animação */
+    }
+
+    /* ANIMAÇÃO DE VOO AO PASSAR O MOUSE */
+    &:hover {
+      /* Efeito de Inversão de Cores */
+      color: #ffffff; /* Texto fica branco */
+      background-color: #da8a67; /* Fundo fica laranja */
+
+      .arrow {
+        /* Move o avião 15px para a direita e o inclina levemente */
+        transform: translateX(20px) rotate(5deg);
+      }
     }
   }
+
   p {
     font-size: 1.25rem;
     color: #f0f4f8;

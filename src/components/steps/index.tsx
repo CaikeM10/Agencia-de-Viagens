@@ -33,9 +33,9 @@ export default function Steps({ language }: StepsProps) {
         },
         {
           number: "04",
-          title: "Suporte 24/7",
+          title: "Suporte Humanizado",
           description:
-            "Nossa equipe está disponível a qualquer momento para garantir que sua viagem seja perfeita.",
+            "Nossa equipe está disponivel para garantir que sua viagem seja perfeita. ",
         },
       ],
     },
@@ -63,7 +63,7 @@ export default function Steps({ language }: StepsProps) {
         },
         {
           number: "04",
-          title: "24/7 Support",
+          title: "humanized support",
           description:
             "Our team is available anytime to ensure your trip is perfect.",
         },
@@ -93,7 +93,7 @@ export default function Steps({ language }: StepsProps) {
         },
         {
           number: "04",
-          title: "Assistance 24/7",
+          title: "soutien humanisé",
           description:
             "Notre équipe est disponible à tout moment pour garantir que votre voyage soit parfait.",
         },
@@ -123,7 +123,7 @@ export default function Steps({ language }: StepsProps) {
         },
         {
           number: "04",
-          title: "Soporte 24/7",
+          title: "apoyo humanizado",
           description:
             "Nuestro equipo está disponible en cualquier momento para garantizar que tu viaje sea perfecto.",
         },
@@ -131,7 +131,7 @@ export default function Steps({ language }: StepsProps) {
     },
   };
 
-  const text = translations[language]; // Seleciona o texto com base no idioma
+  const text = translations[language]; // Seleciona o texto com base no idioma selecionado no menu na versão mobile
 
   useEffect(() => {
     const loadGSAP = async () => {
