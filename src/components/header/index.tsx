@@ -102,7 +102,8 @@ export default function Header({
     >
       <div className={styles.content}>
         <div className={styles.leftside}>
-          <img src="/logo redondo.png" alt="Logo" />
+          {/** alterar a logo para a que não tem nome NEW_LOGO */}
+          <img src="/logo redondo sem nome_eai destino.png" alt="Logo" />
         </div>
         <div className={styles.centerNav}>
           {" "}

@@ -10,7 +10,9 @@ export default function Experience({ language }: ExperienceProps) {
   const textRef = useRef<HTMLHeadingElement>(null);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  {
+    /** adicionar uma forma que as fotos fiquem mais ao meio e preencha a lacuna de "espaço vazio" */
+  }
   const carouselImages = [
     "/foto1.jpg",
     "/foto2.jpg",
@@ -27,6 +29,7 @@ export default function Experience({ language }: ExperienceProps) {
     return () => clearInterval(interval);
   }, [carouselImages.length]);
 
+  //procurar uma forma de fazer a quebra de linha funcionar corretamente e o texto ficar centralizado na versão mobile e desktop
   const translations = {
     pt: {
       header:

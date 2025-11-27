@@ -137,14 +137,14 @@
     cursor: pointer;
     background: none;
     /* Define uma borda inicial, essencial para o efeito de inversão */
-    border: 2px solid #da8a67;
+    border: 3px solid #da8a67;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     /* Aumentei o GAP para dar espaço para o avião */
-    gap: 1.5rem;
+    gap: 1.6rem;
 
     /* Define a cor padrão do texto e do avião */
     color: #da8a67;
@@ -155,7 +155,7 @@
     /* Otimizações para o efeito de voo */
     position: relative; /* Pai do avião, essencial para posicionamento absoluto */
     overflow: hidden; /* Garante que o avião não 'corte' a borda durante o voo */
-    padding-left: 70px; /* Cria espaço extra para o avião dentro do botão */
+    padding-left: 73px; /* Cria espaço extra para o avião dentro do botão */
     transition: all 0.4s ease-in-out;
     border-radius: 7px; /* Adicionado um border-radius para visual mais moderno */
 

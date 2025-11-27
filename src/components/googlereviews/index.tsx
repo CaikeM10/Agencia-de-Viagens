@@ -68,6 +68,18 @@ const reviewData = [
     },
   },
   {
+    //trocar foto e nome para outro depoimento que preencha o espaço solicitado.
+    id: 3,
+    name: "Eder Gustavo",
+    photo: "/ederr.jpg",
+    texts: {
+      pt: "Empresa incrível, já realizei viagens pela Europa e América do Sul com eles e foi além do esperado, sempre que tenho em mente uma viagem, eles são minha primeira opção de escolha, sigo recomendando a todos colegas e amigos sempre que me pedem indicações de agências para realizar suas viagens!!!!",
+      en: "Incredible company, I have already traveled through Europe and South America with them, and it exceeded expectations. Whenever I plan a trip, they are my first choice, I continue to recommend them to all colleagues and friends whenever they ask me for agency recommendations for their trips!!!!",
+      fr: "Entreprise incroyable, j'ai déjà voyagé en Europe et en Amérique du Sud avec eux, et cela a dépassé les attentes. Chaque fois que je pense à un voyage, ils sont mon premier choix, je continue de les recommander à tous mes collègues et amis qui me demandent des recommandations d'agences pour leurs voyages !!!!",
+      es: "Compañía increíble, ya he viajado por Europa y Sudamérica con ellos y ha superado las expectativas. Siempre que tengo un viaje en mente, son mi primera opción, sigo recomendándolos a todos mis colegas y amigos que me piden recomendaciones de agencias para realizar sus viajes!!!!",
+    },
+  },
+  {
     id: 4,
     name: "Ricardo Barbosa",
     photo: "/ricardo.png",

@@ -6,14 +6,15 @@ interface PartnersProps {
 }
 
 // DADOS DE TRADUÇÃO DOS PARCEIROS
+// ADICIONAR OS PARCEIROS RESTANTES AQUI PEGAR DOS LINKS QUE FORAM ENVIADOS
 const partnerData = {
   pt: {
     title: "NOSSOS PRINCIPAIS PARCEIROS",
     partners: [
       { logo: "/aldeia records.png", name: "Aldeia Records" },
-      { logo: "/decolar_logo.svg", name: "Parceiro2" },
-      { logo: "/partner_booking.svg", name: "Parceiro3" },
-      { logo: "/partner_hostgator.svg", name: "Parceiro4" },
+      { logo: "/WorkDrone.jpg", name: "Work Drone" },
+      { logo: "/mega model brasil.png", name: "Mega Model Brasil" },
+      { logo: "/logo_BDA.png", name: "Batalha da Aldeia" },
     ],
   },
   en: {
