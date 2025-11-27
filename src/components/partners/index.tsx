@@ -14,7 +14,7 @@ const partnerData = {
       { logo: "/aldeia records.png", name: "Aldeia Records" },
       { logo: "/WorkDrone.jpg", name: "Work Drone" },
       { logo: "/mega model brasil.png", name: "Mega Model Brasil" },
-      { logo: "/logo_BDA.png", name: "Batalha da Aldeia" },
+      { logo: "/Logo_BDA.png", name: "Batalha da Aldeia" },
     ],
   },
   en: {
