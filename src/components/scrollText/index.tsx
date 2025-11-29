@@ -8,7 +8,7 @@ interface ScrollTextProps {
 const translations = {
   pt: {
     companyName: "E AI DESTINO",
-    slogan: "A MELHOR AGÊNCIA DE VIAGEM",
+    slogan: "E AI, QUAL SERÁ O SEU PRÓXIMO DESTINO?",
   },
   en: {
     companyName: "E Ai DESTINATION",
