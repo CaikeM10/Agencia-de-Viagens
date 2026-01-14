@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,10 +40,10 @@ const reviewData = [
     name: "Thiago de Macedo",
     photo: "/thiago.png",
     texts: {
-      pt: "Eu simplesmente tive zero problemas com a Agência. E já viajo com eles a um bom tempo. Entregam tudo na palma da mão fora as assistências com os voos. Já precisei adiantar alguns e em minutos tudo estava resolvido. Sem contar que não achei melhor valor em outras agências. Ponto muito positivo também são as indicações dos profissionais referente a lugares e estadias. Tudo pensado para  o seu perfil. Sem palavras.",
+      pt: "Eu simplesmente tive zero problemas com a Agência. E já viajo com eles a um bom tempo. Entregam tudo na palma da mão fora as assistências com os voos. Já precisei adiantar alguns e em minutos tudo estava resolvido. Sem contar que não achei melhor valor em outras agências. Ponto muito positivo também são as indicações dos profissionais referente a lugares e estadias. Tudo pensado para o seu perfil. Sem palavras.",
       en: "I simply had zero problems with the Agency. I have been traveling with them for quite some time. They put everything in the palm of your hand, including assistance with flights. I needed to expedite a few things and everything was resolved in minutes. Not to mention, I couldn't find better prices at other agencies. A very positive point is the professionals' recommendations for places and stays. Everything tailored to your profile. No words.",
       fr: "Je n'ai eu absolument aucun problème avec l'Agence. Je voyage avec eux depuis assez longtemps. Ils donnent tout entre vos mains, y compris l'assistance pour les vols. J'ai dû accélérer certaines démarches et tout a été réglé en quelques minutes. Sans parler du fait que je n'ai pas trouvé de meilleurs tarifs chez d'autres agences. Un point très positif également : les recommandations des professionnels pour les lieux et les hébergements. Tout est pensé pour votre profil. Je n'ai pas de mots.",
-      es: "Simplemente no tuve ningún problema con la Agencia. Llevo viajando con ellos desde hace bastante tiempo. Entregan todo en la palma de la mano, incluida la asistencia con los vuelos. Tuve que adelantar algunas cosas y todo se resolvió en minutos. Además, no encontré mejores precios en otras agencias. Un punto muy positivo son las recomendaciones de los profesionales sobre lugares y estancias. Todo pensado para tu perfil. Sin palabras.",
+      es: "Simplemente no tuve ningún problema con la Agencia. Llevo viajando con ellos desde hace bastante tiempo. Entregan todo en la palma de la mano, incluida la asistencia con los vuelos. Tuve que adelantar algunas cosas y todo se resolveu en minutos. Además, no encontré mejores precios en otras agencias. Un punto muy positivo son las recomendaciones de los profesionales sobre lugares y estancias. Todo pensado para tu perfil. Sin palabras.",
     },
   },
   {
@@ -91,61 +92,78 @@ const reviewData = [
   },
 ];
 
-// URLs para o Google (A URL deve ser a mesma para todos os idiomas)
-const googleUrl =
-  "https://www.google.com/maps/place/E+ai+Destino/@-23.6463283,-46.7477352,17z/data=!4m8!3m7!1s0x94ce5152f97ecf19:0xca230375cc7ebeda!8m2!3d-23.6463283!4d-46.7451549!9m1!1b1!16s%2Fg%2F11vzx73j51?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D";
-// LEMBRETE: Use SUA URL CORRETA do Google Maps Reviews AQUI!
+const googleUrl = "https://www.google.com/maps";
 
 export default function GoogleReviews({ language }: GoogleReviewsProps) {
-  // Seleciona as traduções estáticas com base no idioma atual
   const text = translations[language];
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isPaused = useRef(false);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const autoScroll = setInterval(() => {
+      if (isPaused.current) return;
+
+      if (
+        scrollContainer.scrollLeft + scrollContainer.offsetWidth >=
+        scrollContainer.scrollWidth - 10
+      ) {
+        scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        // Desloca 350px (tamanho do card 320px + gap 30px)
+        scrollContainer.scrollBy({ left: 350, behavior: "smooth" });
+      }
+    }, 4000);
+
+    return () => clearInterval(autoScroll);
+  }, []);
 
   return (
     <section className={styles.container}>
-      {/* 1. Título traduzido */}
       <h2 className={styles.title}>{text.title}</h2>
 
-      {/* Bloco de Credibilidade (Estático/Números) */}
       <div className={styles.googleCredibility}>
         <div className={styles.ratingInfo}>
           <Image src="/maps.svg" alt="Logo Google" width={80} height={26} />
-
           <p className={styles.ratingValue}>4.9</p>
           <div className={styles.starIcons}>
-            <span className={styles.star}>★</span>
-            <span className={styles.star}>★</span>
-            <span className={styles.star}>★</span>
-            <span className={styles.star}>★</span>
-            <span className={styles.star}>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
           </div>
-          {/* 2. Contagem de avaliações traduzida */}
           <p className={styles.reviewCount}>{text.reviewCount}</p>
         </div>
       </div>
 
-      {/* Wrapper para o Carrossel/Reviews */}
-      <div className={styles.reviewsCarouselWrapper}>
+      <div
+        className={styles.reviewsCarouselWrapper}
+        ref={scrollRef}
+        onMouseEnter={() => (isPaused.current = true)}
+        onMouseLeave={() => (isPaused.current = false)}
+        onTouchStart={() => (isPaused.current = true)}
+        onTouchEnd={() => (isPaused.current = false)}
+      >
         <div className={styles.reviewsWrapper}>
           {reviewData.map((review) => (
             <div key={review.id} className={styles.reviewCard}>
               <span className={styles.quoteIcon}>“</span>
-
-              {/* 3. Texto do depoimento traduzido, selecionando a chave de linguagem */}
               <p className={styles.reviewText}>{review.texts[language]}</p>
 
               <div className={styles.reviewerInfo}>
                 <div className={styles.reviewerPhotoContainer}>
                   <Image
                     src={review.photo}
-                    alt={`Foto de perfil de ${review.name}`}
+                    alt={`Foto de ${review.name}`}
                     width={70}
                     height={70}
                     className={styles.reviewerPhoto}
                   />
                 </div>
-
                 <h4 className={styles.reviewerName}>{review.name}</h4>
-                {/* 4. Fonte traduzida */}
                 <span className={styles.source}>{text.reviewSource}</span>
               </div>
             </div>
@@ -159,7 +177,6 @@ export default function GoogleReviews({ language }: GoogleReviewsProps) {
           rel="noopener noreferrer"
           className={styles.ctaButton}
         >
-          {/* 5. Texto do botão traduzido */}
           {text.ctaText}
         </a>
       </Link>

@@ -1,18 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import styles from "./styles.module.scss";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import styles from "./styles.module.scss";
 
 interface ExperienceProps {
   language: "pt" | "en" | "fr" | "es";
 }
 
 export default function Experience({ language }: ExperienceProps) {
-  const textRef = useRef<HTMLHeadingElement>(null);
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  {
-    /** adicionar uma forma que as fotos fiquem mais ao meio e preencha a lacuna de "espaço vazio" */
-  }
+
   const carouselImages = [
     "/foto1.jpg",
     "/foto2.jpg",
@@ -29,33 +25,80 @@ export default function Experience({ language }: ExperienceProps) {
     return () => clearInterval(interval);
   }, [carouselImages.length]);
 
-  //procurar uma forma de fazer a quebra de linha funcionar corretamente e o texto ficar centralizado na versão mobile e desktop
   const translations = {
     pt: {
-      header:
-        "Na E ai Destino,  acreditamos  que viajar não deve ser um luxo inatingível reais e inesquecíveis. Estamos empenhados em democratizar a forma como as pessoas exploram o mundo, oferecendo opções que se encaixam em todos os orçamentos. Junte-se a nós nesta jornada emocionante e descubra um mundo de possibilidades. E ai Destino é mais que uma agência de viagens, é um convite para explorar, aprender  e se encantar.",
+      title: (
+        <>
+          Na E ai Destino, acreditamos que viajar{" "}
+          <span>não deve ser um luxo inatingível.</span>
+        </>
+      ),
+      description:
+        "Estamos empenhados em democratizar a forma como as pessoas exploram o mundo, oferecendo opções que se encaixam em todos os orçamentos.",
+      footerText: (
+        <>
+          Junte-se a nós nesta jornada emocionante. A E ai Destino é um convite
+          para <span>explorar, aprender e se encantar.</span>
+        </>
+      ),
       infoCard1: "clientes satisfeitos em todo o mundo.",
       infoCard2: "destinos exóticos.",
       infoCard3: "pacotes personalizados.",
     },
     en: {
-      header:
-        "At E ai Destino, we believe that travel shouldn't be an unattainable luxury—it should be a real, unforgettable experience. We're committed to democratizing the way people explore the world, offering options to suit all budgets. Join us on this exciting journey and discover a world of possibilities. E ai Destino is more than a travel agency; it's an invitation to explore, learn, and be enchanted.",
+      title: (
+        <>
+          At E ai Destino, we believe travel{" "}
+          <span>shouldn&apos;t be an unattainable luxury.</span>
+        </>
+      ),
+      description:
+        "We are committed to democratizing the way people explore the world, offering options that fit all budgets.",
+      footerText: (
+        <>
+          Join us on this exciting journey. E ai Destino is an invitation to{" "}
+          <span>explore, learn, and be enchanted.</span>
+        </>
+      ),
       infoCard1: "satisfied customers worldwide.",
       infoCard2: "exotic destinations.",
       infoCard3: "customized packages.",
     },
     fr: {
-      header:
-        "Chez E ai Destino, nous pensons que voyager ne devrait pas être un luxe inaccessible, mais une expérience authentique et inoubliable. Nous nous engageons à démocratiser la découverte du monde en proposant des options adaptées à tous les budgets. Embarquez pour ce voyage passionnant et découvrez un monde de possibilités. E ai Destino est plus qu'une agence de voyages ; c'est une invitation à explorer, apprendre et se laisser enchanter.",
+      title: (
+        <>
+          Chez E ai Destino, nous pensons que voyager{" "}
+          <span>ne doit pas être un luxe inaccessible.</span>
+        </>
+      ),
+      description:
+        "Nous nous engageons à démocratiser la façon dont les gens explorent le monde, en proposant des options adaptées à tous les budgets.",
+      footerText: (
+        <>
+          Rejoignez-nous dans ce voyage passionnant. E ai Destino est une
+          invitation à <span>explorer, apprendre et s&apos;émerveiller.</span>
+        </>
+      ),
       infoCard1: "clients satisfaits dans le monde entier.",
       infoCard2: "destinations exotiques.",
       infoCard3: "forfaits personnalisés.",
     },
     es: {
-      header:
-        "En E ai Destino, creemos que viajar no debería ser un lujo inalcanzable, sino una experiencia real e inolvidable. Nos comprometemos a democratizar la forma en que las personas exploran el mundo, ofreciendo opciones para todos los presupuestos. Únase a nosotros en este emocionante viaje y descubra un mundo de posibilidades. E ai Destino es más que una agencia de viajes; es una invitación a explorar, aprender y dejarse llevar.",
-      infoCard1: "clientes satisfechos en todo o mundo.",
+      title: (
+        <>
+          En E ai Destino, creemos que viajar{" "}
+          <span>no debe ser un lujo inalcanzable.</span>
+        </>
+      ),
+      description:
+        "Nos comprometemos a democratizar la forma en que las personas exploran el mundo, ofreciendo opciones que se ajustan a todos los presupuestos.",
+      footerText: (
+        <>
+          Únete a nosotros en este emocionante viaje. E ai Destino es una
+          invitación a <span>explorar, aprender y dejarse encantar.</span>
+        </>
+      ),
+      infoCard1: "clientes satisfechos en todo el mundo.",
       infoCard2: "destinos exóticos.",
       infoCard3: "paquetes personalizados.",
     },
@@ -68,58 +111,62 @@ export default function Experience({ language }: ExperienceProps) {
       <div className={styles.content}>
         <div className={styles.topContent}>
           <div className={styles.leftside}>
-            <h2 ref={textRef}>
-              {text.header.split("|BR|").map((line, index, arr) => (
-                <React.Fragment key={index}>
-                  {/* 1. Renderiza as palavras da linha (com o espaço após cada palavra) */}
-                  {line.split(" ").map((word, wordIndex) => (
-                    <span key={`${index}-${wordIndex}`}>{word} </span>
-                  ))}
-
-                  {/* 2. Adiciona a quebra de linha dupla (simulando um parágrafo) */}
-                  {index < arr.length - 1 && (
-                    <React.Fragment>
-                      <br />
-                      <br />
-                    </React.Fragment>
-                  )}
-                </React.Fragment>
-              ))}
-            </h2>
+            <h2>{text.title}</h2>
+            <p className={styles.description}>{text.description}</p>
+            <p className={styles.highlight}>{text.footerText}</p>
           </div>
+
           <div className={styles.rightside}>
             <div className={styles.carouselContainer}>
               {carouselImages.map((image, index) => (
-                <img
+                <Image
                   key={index}
                   src={image}
                   alt={`Destino ${index + 1}`}
                   className={`${styles.carouselImage} ${
                     index === currentImageIndex ? styles.activeImage : ""
                   }`}
+                  width={500}
+                  height={500}
                 />
               ))}
             </div>
           </div>
         </div>
+
         <div className={styles.bottomcontent}>
           <div className={styles.infoCard}>
             <p>
               <strong>5000+</strong> {text.infoCard1}
             </p>
-            <img src="/happy.svg" alt="Clientes felizes" />
+            <Image
+              src="/happy.svg"
+              alt="Clientes felizes"
+              width={50}
+              height={50}
+            />
           </div>
           <div className={styles.infoCard}>
             <p>
               <strong>40+</strong> {text.infoCard2}
             </p>
-            <img src="/palm.svg" alt="Destinos exóticos" />
+            <Image
+              src="/palm.svg"
+              alt="Destinos exóticos"
+              width={50}
+              height={50}
+            />
           </div>
           <div className={styles.infoCard}>
             <p>
               <strong>1000+</strong> {text.infoCard3}
             </p>
-            <img src="/pkg.svg" alt="Pacotes personalizados" />
+            <Image
+              src="/pkg.svg"
+              alt="Pacotes personalizados"
+              width={50}
+              height={50}
+            />
           </div>
         </div>
       </div>

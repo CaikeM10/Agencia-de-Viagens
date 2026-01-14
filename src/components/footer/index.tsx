@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react"; // Importa forwardRef
+import React, { forwardRef } from "react";
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const translations = {
     subscribeTitle: "INSCREVA-SE PARA RECEBER NOVIDADES",
     privacy: "Garantimos a proteção da sua privacidade",
     footerText:
-      "© 2025 E ai Destino. Todos os Direitos Reservados. |BR| Desenvolvido por Caike Marinho | Soluções Web.",
+      "© 2026 E ai Destino. Todos os Direitos Reservados. |BR| Desenvolvido por Caike Marinho | Soluções Web.",
     privacyPolicy: "Política de Privacidade",
     termsConditions: "Termos e Condições",
     copyrights: "Direitos Autorais",
@@ -30,7 +30,8 @@ const translations = {
     remoteService: "Remote service",
     subscribeTitle: "SUBSCRIBE TO RECEIVE UPDATES",
     privacy: "We guarantee the protection of your privacy",
-    footerText: "© 2025 E ai Destino developed by Caike Marinho.",
+    footerText:
+      "© 2026 E ai Destino. All Rights Reserved. |BR| Developed by Caike Marinho | Web Solutions.",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms and Conditions",
     copyrights: "Copyright",
@@ -43,7 +44,8 @@ const translations = {
     remoteService: "Service à distance",
     subscribeTitle: "INSCRIVEZ-VOUS POUR RECEVOIR LES NOUVELLES",
     privacy: "Nous garantissons la protection de votre vie privée",
-    footerText: "© 2025 E ai Destino développé par Caike Marinho.",
+    footerText:
+      "© 2026 E ai Destino. Tous droits réservés. |BR| Développé par Caike Marinho | Solutions Web.",
     privacyPolicy: "Politique de Confidentialité",
     termsConditions: "Termes et Conditions",
     copyrights: "Droits d'Auteur",
@@ -56,20 +58,18 @@ const translations = {
     remoteService: "Atención remota",
     subscribeTitle: "SUSCRÍBETE PARA RECIBIR NOVEDADES",
     privacy: "Garantizamos la protección de tu privacidad",
-    footerText: "© 2025 E ai Destino desarrollado por Caike Marinho.",
+    footerText:
+      "© 2026 E ai Destino. Todos los derechos reservados. |BR| Desarrollado por Caike Marinho | Soluciones Web.",
     privacyPolicy: "Política de Privacidad",
-    termsConditions: "Términos y Condiciones",
+    termsConditions: "Termos y Condiciones",
     copyrights: "Derechos de Autor",
   },
 };
 
-// 1. O componente é envolvido por forwardRef.
-// 2. Ele recebe as props e a 'ref' como segundo argumento.
 const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
   const text = translations[language];
 
   return (
-    // 3. A 'ref' é aplicada no elemento DOM raiz (<footer>)
     <footer ref={ref as React.Ref<HTMLElement>} className={styles.container}>
       <div className={styles.content}>
         <div className={styles.top}>
@@ -81,7 +81,10 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
               height={155}
             />
             <div className={styles.letters}>
-              <Link href="https://www.instagram.com/eaidestino/">
+              <Link
+                href="https://www.instagram.com/eaidestino/"
+                target="_blank"
+              >
                 <Image
                   src="/instagram.svg"
                   alt="instagram"
@@ -89,7 +92,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
                   height={40}
                 />
               </Link>
-              <Link href="https://wa.me/5511967930315">
+              <Link href="https://wa.me/5511967930315" target="_blank">
                 <Image
                   src="/whatsapp.svg"
                   alt="whatsApp"
@@ -122,6 +125,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
                     type="email"
                     placeholder="Digite seu email..."
                     name="email"
+                    required
                   />
                   <button type="submit">
                     <Image
@@ -144,7 +148,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
               </div>
             </div>
             <div className={styles.rightBottom}>
-              <Link href="https://www.reclameaqui.com.br/">
+              <Link href="https://www.reclameaqui.com.br/" target="_blank">
                 <Image
                   src="/reclame.png"
                   alt="reclame"
@@ -152,7 +156,10 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
                   height={100}
                 />
               </Link>
-              <Link href="https://cadastur.turismo.gov.br/cadastur/#!/public/qrcode/54299788000108">
+              <Link
+                href="https://cadastur.turismo.gov.br/cadastur/#!/public/qrcode/54299788000108"
+                target="_blank"
+              >
                 <Image
                   src="/cadastur.png"
                   alt="cadastur"
@@ -166,10 +173,20 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
         <div className={styles.bottom}>
           <div className={styles.leftBottom}>
             <p>
-              {/* Substitui o separador |BR| pela tag <br /> */}
               {text.footerText.split("|BR|").map((line, index) => (
                 <React.Fragment key={index}>
-                  {line}
+                  {index === 1 ? (
+                    // Torna a segunda linha (Desenvolvido por...) um link clicável
+                    <Link
+                      href="https://caikemarinho.com"
+                      target="_blank"
+                      className={styles.developerLink}
+                    >
+                      {line}
+                    </Link>
+                  ) : (
+                    line
+                  )}
                   {index < text.footerText.split("|BR|").length - 1 && <br />}
                 </React.Fragment>
               ))}
@@ -186,7 +203,6 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
   );
 });
 
-// Define o nome de exibição do componente para melhor depuração
 Footer.displayName = "Footer";
 
 export default Footer;

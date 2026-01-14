@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import { titleFont } from "../../fonts";
+// Remova a importação da titleFont se não for usar em mais nada
+// import { titleFont } from "../../fonts";
 
-// URLs das imagens para o pré-carregamento
 const imagesToPreload = [
   "/suica.webp",
   "/images/brasil.jpg",
@@ -15,10 +15,12 @@ const imagesToPreload = [
 ];
 
 const preloadImages = (urls: string[]) => {
-  urls.forEach((url) => {
-    const img = new window.Image();
-    img.src = url;
-  });
+  if (typeof window !== "undefined") {
+    urls.forEach((url) => {
+      const img = new window.Image();
+      img.src = url;
+    });
+  }
 };
 
 interface BannerProps {
@@ -72,7 +74,7 @@ export default function Banner({ language }: BannerProps) {
       title2: "DESTINO",
       description:
         "¡Somos la agencia de viajes más grande con los mejores precios!",
-      buttonText: "Saber más!",
+      buttonText: "¡Saber más!",
       rightBoxTitle: "¡Descubre lugares increíbles!",
       rightBoxDescription: "¡Contáctanos para una cotización!",
     },
@@ -89,14 +91,14 @@ export default function Banner({ language }: BannerProps) {
               <h1>{text.title1}</h1>
               <h2>{text.title2}</h2>
               <div className={styles.description}>
-                <p className={titleFont.className}>{text.description}</p>{" "}
-                {/** aqui gera a importação da FONTE */}
+                {/* REMOVIDO titleFont.className para usar a Montserrat do global */}
+                <p>{text.description}</p>
+
                 <button
                   onClick={() =>
                     window.open("https://wa.me/5511967930315", "_blank")
                   }
                 >
-                  {/** button svg avião */}
                   <img
                     src="/plane.svg"
                     alt="Icone de Avião"

@@ -265,3 +265,15 @@
     max-width: 100%; /* Ajusta a largura total do container de input */
   }
 }
+
+.developerLink {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #da8a67; // Cor de destaque que você usa no banner
+    text-decoration: underline;
+  }
+}
