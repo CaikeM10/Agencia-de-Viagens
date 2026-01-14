@@ -29,7 +29,7 @@ export default function Home() {
     pt: {
       title: "E ai Destino | Sua Agência de Viagens",
       description:
-        " E ai, qual será o seu próximo detino ? A melhor agência de viagens com os melhores preços. Planeje sua próxima aventura conosco!",
+        " E ai, qual será o seu próximo destino ? A melhor agência de viagens com os melhores preços. Planeje sua próxima aventura conosco!",
       previewImage: "https://wwW.eaidestino.com.br/graph-pt.jpg",
     },
     en: {
