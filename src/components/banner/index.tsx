@@ -6,10 +6,10 @@ import Image from "next/image";
 
 const imagesToPreload = [
   "/suica.webp",
-  "/images/brasil.jpg",
+  "/images/brasil.webp",
   "/bg1.webp",
   "/maldives.webp",
-  "/images/chile.jpg",
+  "/images/chile.webp",
   "/bg2.webp",
   "/japan.webp",
 ];
