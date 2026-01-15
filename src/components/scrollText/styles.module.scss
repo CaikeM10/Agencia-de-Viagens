@@ -18,7 +18,7 @@ $animationSpeed: 120s;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px; /* Ajuste o tamanho de acordo com o necessário */
+  width: 700px;
 }
 
 .textContainer {
@@ -63,21 +63,17 @@ $animationSpeed: 120s;
     overflow: hidden;
     white-space: nowrap;
     background-color: #6b8ba2;
-    height: 60px; /* Reduz a altura do slider */
+    height: 60px;
     display: flex;
     align-items: center;
-  }
-
-  .slideTrack {
-    display: flex;
-    animation: scroll $animationSpeed linear infinite;
   }
 
   .slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px; /* Reduz a largura do slide para telas menores */
+    /* AJUSTE: Aumentado levemente para dar mais respiro entre os itens */
+    width: 350px;
   }
 
   .textContainer {
@@ -89,21 +85,24 @@ $animationSpeed: 120s;
 
   .companyName {
     color: #fff;
-    font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    font-size: 1.1rem;
     font-weight: 700;
-    margin: 0 8px;
+    /* AJUSTE: Margem maior para afastar do ícone */
+    margin: 0 15px;
   }
 
   .slogan {
     color: #da8a67;
-    font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    font-size: 1.1rem;
     font-weight: 500;
   }
 
   .icon {
-    width: 30px; /* Reduz o tamanho do ícone */
+    /* AJUSTE: Ícone um pouco menor para não sufocar o texto no mobile */
+    width: 25px;
     height: auto;
-    margin: 0 8px;
+    /* AJUSTE: Margem maior para garantir o respiro */
+    margin: 0 12px;
   }
 
   @keyframes scroll {
@@ -111,8 +110,8 @@ $animationSpeed: 120s;
       transform: translateX(0);
     }
     100% {
-      /* Ajuste o valor para corresponder ao novo tamanho do slide em telas menores */
-      transform: translateX(calc(-300px * 20));
+      /* AJUSTE: O valor deve bater com o novo width do .slide (350px) */
+      transform: translateX(calc(-350px * 20));
     }
   }
 }
