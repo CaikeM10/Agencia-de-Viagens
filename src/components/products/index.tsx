@@ -47,10 +47,10 @@ const translations: Record<CaseStudiesProps["language"], Translations> = {
       {
         id: 3,
         category: "novos",
-        title: "Chip Internacional",
+        title: "Expedições ",
         description:
-          "Mantenha-se conectado durante sua viagem com nossos chips internacionais pré-pagos, oferecendo dados móveis em diversos países.",
-        image: "/chip.jpg",
+          "Aventure-se nas nossas melhores expedições, com os melhores destinos e com as melhores companhias.",
+        image: "/sallar.webp",
       },
       {
         id: 4,
@@ -95,10 +95,10 @@ const translations: Record<CaseStudiesProps["language"], Translations> = {
       {
         id: 9,
         category: "documentos",
-        title: "Tradução Juramentada e Apostilamento de Haia",
+        title: "Chip Internacional",
         description:
-          "Oferecemos tradução juramentada em Inglês, Francês, Italiano, Espanhol e Alemão, com apostilamento de Haia para garantir a validade dos seus documentos no exterior.",
-        image: "/0.jpeg",
+          "Mantenha-se conectado durante sua viagem com nossos chips internacionais pré-pagos, oferecendo dados móveis em diversos países.",
+        image: "/chip.jpg",
       },
     ],
   },
@@ -395,10 +395,10 @@ export default function CaseStudies({ language }: CaseStudiesProps) {
       ? text.caseStudies
       : [
           ...text.caseStudies.filter(
-            (study) => study.category === selectedCategory
+            (study) => study.category === selectedCategory,
           ),
           ...text.caseStudies.filter(
-            (study) => study.category !== selectedCategory
+            (study) => study.category !== selectedCategory,
           ),
         ];
 
@@ -439,7 +439,7 @@ export default function CaseStudies({ language }: CaseStudiesProps) {
                 const encodedMessage = encodeURIComponent(message);
                 window.open(
                   `https://wa.me/5511967930315?text=${encodedMessage}`,
-                  "_blank"
+                  "_blank",
                 );
               }}
             >

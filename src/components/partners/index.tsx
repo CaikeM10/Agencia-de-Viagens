@@ -21,27 +21,27 @@ const partnerData = {
     title: "OUR MAIN PARTNERS",
     partners: [
       { logo: "/aldeia records.png", name: "Aldeia Records" },
-      { logo: "/decolar_logo.svg", name: "Parceiro2" },
-      { logo: "/partner_booking.svg", name: "Parceiro3" },
-      { logo: "/partner_hostgator.svg", name: "Parceiro4" },
+      { logo: "/WorkDrone.jpg", name: "Work Drone" },
+      { logo: "/mega model brasil.png", name: "Mega Model Brasil" },
+      { logo: "/Logo_BDA.png", name: "Batalha da Aldeia" },
     ],
   },
   fr: {
     title: "NOS PARTENAIRES PRINCIPAUX",
     partners: [
       { logo: "/aldeia records.png", name: "Aldeia Records" },
-      { logo: "/decolar_logo.svg", name: "Parceiro2" },
-      { logo: "/partner_booking.svg", name: "Parceiro3" },
-      { logo: "/partner_hostgator.svg", name: "Parceiro4" },
+      { logo: "/WorkDrone.jpg", name: "Work Drone" },
+      { logo: "/mega model brasil.png", name: "Mega Model Brasil" },
+      { logo: "/Logo_BDA.png", name: "Batalha da Aldeia" },
     ],
   },
   es: {
     title: "NUESTROS PRINCIPALES SOCIOS",
     partners: [
       { logo: "/aldeia records.png", name: "Aldeia Records" },
-      { logo: "/decolar_logo.svg", name: "Parceiro2" },
-      { logo: "/partner_booking.svg", name: "Parceiro3" },
-      { logo: "/partner_hostgator.svg", name: "Parceiro4" },
+      { logo: "/WorkDrone.jpg", name: "Work Drone" },
+      { logo: "/mega model brasil.png", name: "Mega Model Brasil" },
+      { logo: "/Logo_BDA.png", name: "Batalha da Aldeia" },
     ],
   },
 };

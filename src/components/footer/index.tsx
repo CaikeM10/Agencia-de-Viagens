@@ -102,23 +102,47 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
               </Link>
             </div>
           </div>
+
           <div className={styles.middle}>
             <div className={styles.box2}>
               <h5>{text.serviceQuestions}</h5>
               <p>{text.onlineService}</p>
               <h4>contato@eaidestino.com.br</h4>
             </div>
+
             <div className={styles.box2}>
               <h5>{text.customerSupport}</h5>
               <p>{text.availableInBrazil}</p>
               <p>{text.remoteService}</p>
+
               <h4>suporte@eaidestino.com.br</h4>
-              <h4>contato +55 (11) 967930315</h4>
+
+              <h4>
+                <a
+                  href="https://wa.me/5511967930315"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  contato E ai Destino +55 (11) 96793-0315
+                </a>
+              </h4>
+
+              <h4>
+                <a
+                  href="https://wa.me/5511959977354"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  contato E ai Expedições +55 (11) 95997-7354
+                </a>
+              </h4>
             </div>
           </div>
+
           <div className={styles.rightside}>
             <div className={styles.rightTop}>
               <h2>{text.subscribeTitle}</h2>
+
               <form action="/api/contact" method="POST">
                 <div className={styles.inputContainer}>
                   <input
@@ -137,6 +161,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
                   </button>
                 </div>
               </form>
+
               <div className={styles.privacy}>
                 <Image
                   src="/hand.svg"
@@ -147,6 +172,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
                 <p>{text.privacy}</p>
               </div>
             </div>
+
             <div className={styles.rightBottom}>
               <Link href="https://www.reclameaqui.com.br/" target="_blank">
                 <Image
@@ -156,6 +182,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
                   height={100}
                 />
               </Link>
+
               <Link
                 href="https://cadastur.turismo.gov.br/cadastur/#!/public/qrcode/54299788000108"
                 target="_blank"
@@ -170,13 +197,13 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
             </div>
           </div>
         </div>
+
         <div className={styles.bottom}>
           <div className={styles.leftBottom}>
             <p>
               {text.footerText.split("|BR|").map((line, index) => (
                 <React.Fragment key={index}>
                   {index === 1 ? (
-                    // Torna a segunda linha (Desenvolvido por...) um link clicável
                     <Link
                       href="https://caikemarinho.com"
                       target="_blank"
@@ -192,6 +219,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ language }, ref) => {
               ))}
             </p>
           </div>
+
           <div className={styles.rightBottom}>
             <p>{text.privacyPolicy}</p>
             <p>{text.termsConditions}</p>
